@@ -68,53 +68,70 @@ a{text-decoration:none}
 .tp a:hover{background:rgba(0,0,0,.06);color:var(--tx)}
 
 /* SERVICES */
-.svc{padding:60px 4% 80px}
+.svc{padding:80px 4%;background:var(--w)}
 .sg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1100px;margin:0 auto}
-.sc{border:1px solid var(--ln);border-radius:14px;padding:28px 22px;transition:.3s}
-.sc:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.05)}
-.sc .ic{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:14px;background:rgba(26,153,136,.06)}
-.sc:nth-child(even) .ic{background:rgba(0,53,118,.05)}
-.sc h3{font-family:'Playfair Display',serif;font-size:16px;font-weight:600;margin-bottom:6px}
-.sc p{font-size:14px;color:var(--mt);line-height:1.65;font-weight:300}
+.sc{border:2px solid rgba(26,153,136,.18);border-radius:16px;padding:28px 24px;transition:.35s;position:relative;overflow:hidden}
+.sc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--t);transform:scaleX(0);transition:.35s;transform-origin:left}
+.sc:nth-child(even){border-color:rgba(0,53,118,.15)}
+.sc:nth-child(even)::before{background:var(--n)}
+.sc:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.06);border-color:rgba(26,153,136,.35)}
+.sc:nth-child(even):hover{border-color:rgba(0,53,118,.3)}
+.sc:hover::before{transform:scaleX(1)}
+.sc .ic{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;background:linear-gradient(135deg,rgba(26,153,136,.08),rgba(26,153,136,.02));border:1px solid rgba(26,153,136,.06);transition:.3s}
+.sc:nth-child(even) .ic{background:linear-gradient(135deg,rgba(0,53,118,.06),rgba(0,53,118,.02));border-color:rgba(0,53,118,.06)}
+.sc:hover .ic{transform:scale(1.05)}
+.sc h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;margin-bottom:6px}
+.sc p{font-size:14px;color:var(--mt);line-height:1.7;font-weight:300}
 
 /* HOW */
-.how{padding:80px 4%;background:var(--bg)}
-.hg{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1100px;margin:0 auto}
-.hc{text-align:center;padding:16px}
-.hc .nu{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:rgba(0,53,118,.35);margin-bottom:8px}
-.hc h3{font-size:15px;font-weight:600;margin-bottom:4px}
-.hc p{font-size:13px;color:var(--mt);line-height:1.6;font-weight:300}
+.how{padding:80px 4%;background:linear-gradient(180deg,var(--bg),#f0f4f8,var(--bg))}
+.hg{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1100px;margin:0 auto;position:relative}
+.hg::before{content:'';position:absolute;top:30px;left:14%;right:14%;height:2px;background:linear-gradient(90deg,transparent,rgba(0,53,118,.1),rgba(26,153,136,.1),transparent)}
+.hc{text-align:center;padding:16px;position:relative}
+.hc .nu{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--n);width:52px;height:52px;border-radius:50%;border:2px solid rgba(0,53,118,.12);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;background:var(--w);position:relative;z-index:1;transition:.3s}
+.hc:hover .nu{background:var(--n);color:#fff;border-color:transparent;box-shadow:0 6px 20px rgba(0,53,118,.2)}
+.hc h3{font-size:15px;font-weight:600;margin-bottom:6px}
+.hc p{font-size:13px;color:var(--mt);line-height:1.65;font-weight:300}
 
 /* VERTICALS */
-.vrt{padding:80px 4%}
+.vrt{padding:80px 4%;background:var(--bg)}
 .vg{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;max-width:1100px;margin:0 auto}
-.vc{display:block;text-align:center;border:1px solid var(--ln);border-radius:12px;padding:24px 10px;color:var(--tx);transition:.3s}
-.vc:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.05);border-color:rgba(26,153,136,.15)}
-.vc .vi{font-size:28px;display:block;margin-bottom:4px}
+.vc{display:block;text-align:center;border:1px solid var(--ln);border-radius:14px;padding:28px 10px;color:var(--tx);transition:.35s;position:relative;overflow:hidden;background:var(--w)}
+.vc::after{content:'';position:absolute;bottom:0;left:20%;right:20%;height:3px;background:var(--t);transform:scaleX(0);transition:.3s;border-radius:3px}
+.vc:nth-child(even)::after{background:var(--n)}
+.vc:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,.06);border-color:rgba(26,153,136,.12)}
+.vc:hover::after{transform:scaleX(1)}
+.vc .vi{font-size:32px;display:flex;align-items:center;justify-content:center;width:56px;height:56px;margin:0 auto 8px;border-radius:14px;background:rgba(26,153,136,.04)}
+.vc:nth-child(even) .vi{background:rgba(0,53,118,.04)}
 .vc h4{font-size:14px;font-weight:600;margin-bottom:2px}
 .vc p{font-size:11px;color:var(--mt);font-weight:300}
 
 /* TESTIMONIALS */
-.tst{padding:80px 4%;background:var(--bg)}
+.tst{padding:80px 4%;background:var(--w);position:relative}
 .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1100px;margin:0 auto}
-.tc{background:var(--w);border:1px solid var(--ln);border-radius:14px;padding:28px;transition:.3s}
-.tc:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.05)}
-.tc .sr{color:#e8b931;font-size:14px;margin-bottom:12px;letter-spacing:2px}
-.tc blockquote{font-size:14px;color:var(--gr);line-height:1.75;font-style:italic;font-weight:300;margin-bottom:16px}
+.tc{background:var(--w);border:1px solid var(--ln);border-radius:16px;padding:32px 28px;transition:.35s;position:relative;overflow:hidden}
+.tc::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--t);transition:.4s}
+.tc:nth-child(even)::before{background:var(--n)}
+.tc:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.06)}
+.tc:hover::before{height:100%}
+.tc .sr{color:#e8b931;font-size:14px;margin-bottom:14px;letter-spacing:2px}
+.tc blockquote{font-size:14px;color:var(--gr);line-height:1.8;font-style:italic;font-weight:300;margin-bottom:20px;position:relative;padding-left:20px;border-left:2px solid rgba(26,153,136,.15)}
 .tc .au{display:flex;align-items:center;gap:10px}
-.tc .av{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--t),var(--n));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13px;flex-shrink:0}
+.tc .av{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--t),var(--n));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;flex-shrink:0}
 .tc .au strong{font-size:14px;display:block}
 .tc .au span{font-size:12px;color:var(--mt)}
 
 /* CTA */
 .cta{padding:80px 4%;text-align:center;background:linear-gradient(135deg,var(--n),#012a5c,#0a1628);position:relative;overflow:hidden}
 .cta .pat{position:absolute;inset:0;opacity:.03;background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:32px 32px}
+.cta::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;border-radius:50%;background:radial-gradient(ellipse,rgba(26,153,136,.15),transparent 65%);pointer-events:none}
 .cta-in{position:relative;z-index:1}
 .cta .sh{color:#fff}
 .cta p{color:rgba(255,255,255,.45);max-width:400px;margin:0 auto 28px;line-height:1.7;font-weight:300}
 
 /* FOOTER */
-.ft{padding:56px 4% 20px;background:var(--bg);border-top:1px solid var(--ln)}
+.ft{padding:56px 4% 20px;background:var(--bg);border-top:1px solid var(--ln);position:relative}
+.ft::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--t) 50%,var(--n) 50%);opacity:.2}
 .ft-in{max-width:1100px;margin:0 auto}
 .ft-g{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
 .ft-b{max-width:260px}
@@ -165,19 +182,25 @@ a{text-decoration:none}
 .ppc p{font-size:13px;color:var(--mt);line-height:1.6;font-weight:300}
 
 /* STATS BAR */
-.stats{display:flex;justify-content:center;gap:48px;padding:48px 4%;background:var(--w);border-bottom:1px solid var(--ln)}
-.stat{text-align:center}
-.stat h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--n);margin-bottom:2px}
-.stat p{font-size:11px;color:var(--mt);text-transform:uppercase;letter-spacing:2px;font-weight:500}
+.stats{display:flex;justify-content:center;gap:0;padding:0 4%;background:var(--w);border-bottom:1px solid var(--ln);max-width:900px;margin:0 auto}
+.stat{text-align:center;flex:1;padding:32px 20px;position:relative}
+.stat+.stat{border-left:1px solid var(--ln)}
+.stat h3{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--n);margin-bottom:2px}
+.stat p{font-size:10px;color:var(--mt);text-transform:uppercase;letter-spacing:2px;font-weight:500}
 
 /* WHY SECTION */
-.why{padding:72px 4%}
-.why-g{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1100px;margin:0 auto}
-.wy{display:flex;gap:14px;padding:24px 20px;border:1px solid var(--ln);border-radius:12px;transition:.3s}
-.wy:hover{border-color:rgba(26,153,136,.15);box-shadow:0 4px 16px rgba(0,0,0,.04)}
-.wy .wk{flex-shrink:0;width:36px;height:36px;border-radius:8px;background:rgba(26,153,136,.07);color:var(--t);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
-.wy h4{font-size:14px;font-weight:600;margin-bottom:3px}
-.wy p{font-size:13px;color:var(--mt);line-height:1.6;font-weight:300}
+.why{padding:80px 4%;background:var(--w)}
+.why-g{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:1100px;margin:0 auto}
+.wy{display:flex;gap:14px;padding:24px 20px;border:1px solid var(--ln);border-radius:14px;transition:.35s;position:relative;overflow:hidden;background:var(--w)}
+.wy::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--t);transform:scaleY(0);transition:.35s;transform-origin:top}
+.wy:nth-child(even)::before{background:var(--n)}
+.wy:hover{border-color:rgba(26,153,136,.12);box-shadow:0 6px 20px rgba(0,0,0,.04);transform:translateX(2px)}
+.wy:hover::before{transform:scaleY(1)}
+.wy .wk{flex-shrink:0;width:38px;height:38px;border-radius:10px;background:rgba(26,153,136,.07);color:var(--t);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;transition:.3s}
+.wy:hover .wk{background:var(--t);color:#fff}
+.wy:nth-child(even):hover .wk{background:var(--n);color:#fff}
+.wy h4{font-size:14px;font-weight:600;margin-bottom:4px}
+.wy p{font-size:13px;color:var(--mt);line-height:1.65;font-weight:300}
 
 /* RESPONSIVE */
 @media(max-width:1024px){
@@ -185,10 +208,11 @@ a{text-decoration:none}
 .vg{grid-template-columns:repeat(3,1fr)}
 .tg{grid-template-columns:1fr 1fr}
 .hg,.ppg{grid-template-columns:repeat(2,1fr)}
+.hg::before{display:none}
 .pw-g{grid-template-columns:1fr}
 .psg{grid-template-columns:repeat(2,1fr)}
 .why-g{grid-template-columns:1fr 1fr}
-.stats{gap:32px;flex-wrap:wrap}
+.stats{flex-wrap:wrap;max-width:100%}
 .prob>div{grid-template-columns:1fr !important}
 }
 @media(max-width:768px){
@@ -203,7 +227,8 @@ a{text-decoration:none}
 .hg,.ppg{grid-template-columns:1fr 1fr}
 .ft-g{flex-direction:column}
 .ft-c{gap:32px;flex-wrap:wrap}
-.stats{gap:20px;padding:32px 4%}
+.stats{gap:0}
+.stat{padding:24px 16px}
 .stat h3{font-size:22px}
 .ft-bt{flex-direction:column;gap:4px;text-align:center}
 }
@@ -261,10 +286,10 @@ a{text-decoration:none}
 </section>
 
 <div class="stats">
-  <div class="stat"><h3>50M+</h3><p>Leads Delivered</p></div>
   <div class="stat"><h3>6</h3><p>Verticals Served</p></div>
   <div class="stat"><h3>Real-Time</h3><p>Delivery Speed</p></div>
   <div class="stat"><h3>100%</h3><p>TCPA Compliant</p></div>
+  <div class="stat"><h3>24hrs</h3><p>To Go Live</p></div>
 </div>
 
 <section class="svc" id="svc">
@@ -281,19 +306,19 @@ a{text-decoration:none}
   </div>
 </section>
 
-<section class="prob" style="padding:64px 4%;background:var(--w);">
-  <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
-    <div>
-      <p class="st" style="text-align:left">The Problem</p>
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(22px,2.5vw,28px);font-weight:600;margin-bottom:14px">Most Lead Vendors Are Selling You Garbage</h2>
-      <p style="font-size:15px;color:var(--mt);line-height:1.75;font-weight:300;margin-bottom:12px">If you've bought leads before, you know the pain: disconnected numbers, fake emails, leads sold to 8 other buyers, and zero consent documentation. You burn through your budget calling people who never asked to be contacted.</p>
-      <p style="font-size:15px;color:var(--mt);line-height:1.75;font-weight:300">The result? Low contact rates, wasted sales hours, compliance risk, and shrinking margins. Your team deserves better data.</p>
+<section style="padding:72px 4%;background:linear-gradient(180deg,var(--bg),#f0f4f8,var(--bg))">
+  <div style="max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch" class="prob">
+    <div style="padding:36px 32px;border-radius:16px;border:1px solid var(--ln);background:var(--w)">
+      <p class="st" style="text-align:left;color:#c74a4a">The Problem</p>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(20px,2.2vw,26px);font-weight:600;margin-bottom:14px">Most Lead Vendors Are Selling You Garbage</h2>
+      <p style="font-size:14px;color:var(--mt);line-height:1.75;font-weight:300;margin-bottom:12px">If you've bought leads before, you know the pain: disconnected numbers, fake emails, leads sold to 8 other buyers, and zero consent documentation.</p>
+      <p style="font-size:14px;color:var(--mt);line-height:1.75;font-weight:300">The result? Low contact rates, wasted sales hours, compliance risk, and shrinking margins. Your team deserves better.</p>
     </div>
-    <div>
+    <div style="padding:36px 32px;border-radius:16px;border:1px solid rgba(26,153,136,.15);background:linear-gradient(135deg,rgba(26,153,136,.03),rgba(0,53,118,.02))">
       <p class="st" style="text-align:left">The Wyn Group Difference</p>
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(22px,2.5vw,28px);font-weight:600;margin-bottom:14px">Leads That Your Team Actually Wants to Call</h2>
-      <p style="font-size:15px;color:var(--mt);line-height:1.75;font-weight:300;margin-bottom:12px">Every lead we deliver is generated from our own media campaigns, verified in real time, and enriched with the data your sales team needs to close. Full TCPA consent. Full transparency. Full control through your buyer portal.</p>
-      <p style="font-size:15px;color:var(--mt);line-height:1.75;font-weight:300"><strong style="color:var(--tx)">No contracts. No minimums. No risk.</strong> Start with 10 leads a day or 10,000. Scale on your terms. Pause anytime. Your first leads can be flowing within 48 hours.</p>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(20px,2.2vw,26px);font-weight:600;margin-bottom:14px">Leads Your Team Actually Wants to Call</h2>
+      <p style="font-size:14px;color:var(--mt);line-height:1.75;font-weight:300;margin-bottom:12px">Every lead is generated from our own media campaigns, verified in real time, and enriched with the data your sales team needs to close. Full TCPA consent. Full transparency.</p>
+      <p style="font-size:14px;color:var(--mt);line-height:1.75;font-weight:300"><strong style="color:var(--tx)">No contracts. No minimums. No risk.</strong> Start with 10 leads a day or 10,000. Your first leads can flow within 48 hours.</p>
     </div>
   </div>
 </section>
@@ -340,8 +365,7 @@ a{text-decoration:none}
 
 <section class="tst">
   <p class="st">Trusted by Buyers</p>
-  <p class="sh">What Our Clients Say</p>
-  <p class="sd"></p>
+  <p class="sh" style="margin-bottom:32px">What Our Clients Say</p>
   <div class="tg">
     <div class="tc">
       <div class="sr">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -357,6 +381,16 @@ a{text-decoration:none}
       <div class="sr">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
       <blockquote>"We scaled from 50 leads a week to over 500. The account team is incredibly responsive and the real-time portal reporting is the best I've seen."</blockquote>
       <div class="au"><div class="av">JD</div><div><strong>James D.</strong><br><span>Owner, Home Services Company</span></div></div>
+    </div>
+    <div class="tc">
+      <div class="sr">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote>"We switched from two other lead providers and the difference was night and day. Contact rates doubled in the first week. The lead quality is unmatched."</blockquote>
+      <div class="au"><div class="av">RL</div><div><strong>Robert L.</strong><br><span>Sales Manager, Finance Company</span></div></div>
+    </div>
+    <div class="tc">
+      <div class="sr">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote>"The API integration was seamless and leads started flowing into our CRM within hours of signing up. Our agents love the data quality &mdash; every field is accurate."</blockquote>
+      <div class="au"><div class="av">AT</div><div><strong>Angela T.</strong><br><span>Operations Director, Medicare Agency</span></div></div>
     </div>
   </div>
 </section>

@@ -1,26 +1,36 @@
-// Nav scroll
-window.addEventListener('scroll', function() {
-  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
-}, { passive: true });
+// Scroll effect
+window.addEventListener('scroll', function () {
+  var nav = document.querySelector('.navbar');
+  if (window.scrollY > 50) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
 
 // Mobile menu
-document.getElementById('hamburger').addEventListener('click', function() {
-  document.getElementById('navLinks').classList.toggle('open');
-  document.getElementById('navRight').classList.toggle('open');
-});
+var toggle = document.querySelector('.nav-toggle');
+if (toggle) {
+  toggle.addEventListener('click', function () {
+    document.querySelector('.nav-menu').classList.toggle('open');
+    document.querySelector('.nav-actions').classList.toggle('open');
+  });
+}
 
 // Dropdown
-document.querySelectorAll('.dd-trigger').forEach(function(btn) {
-  btn.addEventListener('click', function(e) {
+var triggers = document.querySelectorAll('.nav-dropdown > a');
+for (var i = 0; i < triggers.length; i++) {
+  triggers[i].addEventListener('click', function (e) {
     e.preventDefault();
-    this.parentElement.classList.toggle('open');
+    this.parentElement.classList.toggle('active');
   });
-});
+}
 
-document.addEventListener('click', function(e) {
-  if (!e.target.closest('.dropdown')) {
-    document.querySelectorAll('.dropdown').forEach(function(d) {
-      d.classList.remove('open');
-    });
+document.addEventListener('click', function (e) {
+  if (!e.target.closest('.nav-dropdown')) {
+    var dd = document.querySelectorAll('.nav-dropdown');
+    for (var i = 0; i < dd.length; i++) {
+      dd[i].classList.remove('active');
+    }
   }
 });

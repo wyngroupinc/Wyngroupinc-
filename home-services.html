@@ -11,14 +11,18 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<nav id="navbar">
-  <a href="index.html" class="logo"><svg width="210" height="35" viewBox="0 0 420 70" xmlns="http://www.w3.org/2000/svg"><g transform="translate(4,10)"><rect x="0" y="16" width="5" height="20" rx="2.5" transform="rotate(-18,2.5,26)" fill="#1a9988" opacity=".2"/><rect x="10" y="9" width="6.5" height="30" rx="3.25" transform="rotate(-18,13.25,24)" fill="#1a9988" opacity=".4"/><rect x="23" y="3" width="8" height="40" rx="4" transform="rotate(-18,27,23)" fill="#1a9988" opacity=".65"/><rect x="38" y="0" width="10" height="48" rx="5" transform="rotate(-18,43,24)" fill="#1a9988"/></g><text x="56" y="45" font-family="DM Sans,sans-serif" font-size="32" letter-spacing="1.5"><tspan font-weight="700" fill="#111">Wyn Group </tspan><tspan font-weight="300" fill="#aaa">Inc</tspan></text></svg></a>
-  <ul class="nav-links" id="navLinks">
+
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">
+    <svg width="210" height="35" viewBox="0 0 420 70"><g transform="translate(4,10)"><rect x="0" y="16" width="5" height="20" rx="2.5" transform="rotate(-18,2.5,26)" fill="#1a9988" opacity=".2"/><rect x="10" y="9" width="6.5" height="30" rx="3.25" transform="rotate(-18,13.25,24)" fill="#1a9988" opacity=".4"/><rect x="23" y="3" width="8" height="40" rx="4" transform="rotate(-18,27,23)" fill="#1a9988" opacity=".65"/><rect x="38" y="0" width="10" height="48" rx="5" transform="rotate(-18,43,24)" fill="#1a9988"/></g><text x="56" y="45" font-family="DM Sans,sans-serif" font-size="32" letter-spacing="1.5"><tspan font-weight="700" fill="#111">Wyn Group </tspan><tspan font-weight="300" fill="#aaa">Inc</tspan></text></svg>
+  </a>
+  <ul class="nav-menu">
     <li><a href="index.html#services">Services</a></li>
     <li><a href="index.html#how">Process</a></li>
-    <li class="dropdown">
-      <a href="#" class="dd-trigger">Industries <span class="dd-arrow">&#9660;</span></a>
-      <div class="dd-menu">
+    <li class="nav-dropdown">
+      <a href="#">Industries <span class="arrow">&#9660;</span></a>
+      <div class="nav-dropdown-menu">
         <a href="solar.html">&#9728;&#65039; Solar</a>
         <a href="home-services.html">&#127968; Home Services</a>
         <a href="insurance.html">&#128737;&#65039; Insurance</a>
@@ -28,169 +32,124 @@
       </div>
     </li>
   </ul>
-  <div class="nav-right" id="navRight">
-    <a href="https://leads.wyngroupinc.com/login" target="_blank" rel="noopener" class="btn-portal">Lead Portal</a>
-    <a href="https://leads.wyngroupinc.com/login" target="_blank" rel="noopener" class="btn-nav-cta">Get Started &rarr;</a>
+  <div class="nav-actions">
+    <a href="https://leads.wyngroupinc.com/login" target="_blank" class="btn-nav-portal">Lead Portal</a>
+    <a href="https://leads.wyngroupinc.com/login" target="_blank" class="btn-nav-start">Get Started</a>
   </div>
-  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
+<!-- HERO -->
 <section class="page-hero">
   <div class="page-hero-inner">
-    <div class="badge"><span class="dot"></span> 🏠 Home Services Leads</div>
+    <div class="pill"><span class="dot"></span> &#9728;&#65039; Solar Leads#127968; Home Services Leads</div>
     <h1>Qualified <em>Home Services</em> Leads on Demand</h1>
     <p>Reach homeowners ready to hire for HVAC, roofing, plumbing, windows, and more. Verified for project type, timeline, and ownership.</p>
-    <div class="btn-row">
-      <a href="https://leads.wyngroupinc.com/login" target="_blank" rel="noopener" class="btn-primary">Buy Home Services Leads &rarr;</a>
-      <a href="https://leads.wyngroupinc.com/login" target="_blank" rel="noopener" class="btn-blue">Lead Portal</a>
+    <div class="btn-group">
+      <a href="https://leads.wyngroupinc.com/login" target="_blank" class="btn-teal">Buy Home Services Leads &rarr;</a>
+      <a href="https://leads.wyngroupinc.com/login" target="_blank" class="btn-navy">Lead Portal</a>
     </div>
   </div>
 </section>
 
+<!-- WHY -->
 <section class="page-why">
-  <div class="page-why-inner">
+  <div class="page-why-grid">
     <div class="page-why-text">
-      <p class="label">Why Home Services Companies Choose Us</p>
+      <p class="section-tag">Why Home Services Companies Choose Us</p>
       <h2>Built for Home Services Buyers</h2>
       <p>When an AC breaks or a roof leaks, homeowners hire the first company that answers. Wyn Group delivers leads at the moment of need — qualified by project type, urgency, ownership, and budget.</p>
     </div>
     <div>
       <ul class="check-list">
-          <li><span>✓</span> Segmented by trade — HVAC, roofing, plumbing, electrical</li>
-          <li><span>✓</span> Urgency-qualified: emergency, this week, planning</li>
-          <li><span>✓</span> Verified homeowner with real project and budget</li>
-          <li><span>✓</span> Real-time delivery to beat competitors</li>
-          <li><span>✓</span> Zip-level targeting across all 50 states</li>
-          <li><span>✓</span> No contracts — pause or scale anytime</li>
+        <li><span class="ck">&#10003;</span> Segmented by trade — HVAC, roofing, plumbing</li>
+        <li><span class="ck">&#10003;</span> Urgency-qualified: emergency, this week, planning</li>
+        <li><span class="ck">&#10003;</span> Verified homeowner with real project and budget</li>
+        <li><span class="ck">&#10003;</span> Real-time delivery to beat competitors</li>
+        <li><span class="ck">&#10003;</span> TCPA consent with Jornaya &amp; TrustedForm</li>
+        <li><span class="ck">&#10003;</span> No contracts — pause or scale anytime</li>
       </ul>
     </div>
   </div>
 </section>
 
+<!-- FEATURES -->
 <section class="page-features">
-  <div class="sec-header">
-    <p class="label-center">What You Get</p>
-    <div class="heading">Home Services Lead Types</div>
-    <p class="subtext">Specialized lead products for every segment of the home services market.</p>
-  </div>
-  <div class="feat-grid">
-        <div class="feat-card">
-          <h3>HVAC &amp; Heating</h3>
-          <p>AC repair, furnace replacement, mini-split installation, and duct cleaning leads.</p>
-        </div>
-        <div class="feat-card">
-          <h3>Roofing</h3>
-          <p>Storm damage, full re-roofs, leak repair, and new construction roofing leads.</p>
-        </div>
-        <div class="feat-card">
-          <h3>Plumbing</h3>
-          <p>Emergency and scheduled — water heater, drain clearing, repiping, fixtures.</p>
-        </div>
-        <div class="feat-card">
-          <h3>Windows &amp; Siding</h3>
-          <p>Replacement window and siding leads with material preference and timeline.</p>
-        </div>
-        <div class="feat-card">
-          <h3>Electrical</h3>
-          <p>Panel upgrades, rewiring, EV charger installation, and generator leads.</p>
-        </div>
-        <div class="feat-card">
-          <h3>General Contracting</h3>
-          <p>Kitchen remodels, bathroom renovations, additions with project scope and budget.</p>
-        </div>
+  <div class="section-tag">What You Get</div>
+  <div class="section-heading">Home Services Lead Types</div>
+  <p class="section-desc">Specialized lead products for every segment of the home services market.</p>
+  <div class="features-grid">
+    <div class="feature-card"><h3>HVAC &amp; Heating</h3><p>AC repair, furnace replacement, mini-split, and duct cleaning leads.</p></div>
+    <div class="feature-card"><h3>Roofing</h3><p>Storm damage, re-roofs, leak repair, and new construction roofing leads.</p></div>
+    <div class="feature-card"><h3>Plumbing</h3><p>Emergency and scheduled — water heater, drain clearing, repiping, fixtures.</p></div>
+    <div class="feature-card"><h3>Windows &amp; Siding</h3><p>Replacement window and siding leads with material preference and timeline.</p></div>
+    <div class="feature-card"><h3>Electrical</h3><p>Panel upgrades, rewiring, EV charger installation, and generator leads.</p></div>
+    <div class="feature-card"><h3>General Contracting</h3><p>Kitchen remodels, bathroom renovations, additions with project scope and budget.</p></div>
   </div>
 </section>
 
+<!-- SPECS -->
 <section class="page-specs">
-  <div class="sec-header">
-    <p class="label-center">Lead Specifications</p>
-    <div class="heading">What's Included in Every Lead</div>
-    <p class="subtext">Full transparency on data, delivery, and return policy.</p>
-  </div>
-  <div class="spec-grid">
-        <div class="spec-card">
-          <h4>Lead Fields</h4>
-          <p>Name, phone, email, address, project type, urgency, property type, budget, notes</p>
-        </div>
-        <div class="spec-card">
-          <h4>Consent</h4>
-          <p>TCPA opt-in, TrustedForm cert, Jornaya token, IP, timestamp, source URL</p>
-        </div>
-        <div class="spec-card">
-          <h4>Delivery</h4>
-          <p>Real-time API, ping/post, portal, email alerts, CRM integration</p>
-        </div>
-        <div class="spec-card">
-          <h4>Filters</h4>
-          <p>Trade type, state, zip, project urgency, homeowner status, budget minimum</p>
-        </div>
-        <div class="spec-card">
-          <h4>Volume</h4>
-          <p>5 to 300+ leads/day by trade and geography</p>
-        </div>
-        <div class="spec-card">
-          <h4>Returns</h4>
-          <p>Wrong trade, non-homeowner, disconnected phone, duplicate within 30 days</p>
-        </div>
+  <div class="section-tag">Lead Specifications</div>
+  <div class="section-heading">What's Included in Every Lead</div>
+  <p class="section-desc">Full transparency on data, delivery, and return policy.</p>
+  <div class="specs-grid">
+    <div class="spec-card"><h4>Lead Fields</h4><p>Name, phone, email, address, project type, urgency, property type, budget range, notes</p></div>
+    <div class="spec-card"><h4>Consent</h4><p>TCPA opt-in, TrustedForm cert, Jornaya token, timestamp, IP, landing page URL</p></div>
+    <div class="spec-card"><h4>Delivery</h4><p>Real-time API ping/post, email, portal CSV, or direct CRM push</p></div>
+    <div class="spec-card"><h4>Filters</h4><p>State, zip, trade type, state, zip, urgency, homeowner status, budget minimum</p></div>
+    <div class="spec-card"><h4>Volume</h4><p>5 to 300+ leads/day by trade and geography depending on geo and budget</p></div>
+    <div class="spec-card"><h4>Returns</h4><p>Wrong trade, non-homeowner, disconnected phone, duplicate within 30 days</p></div>
   </div>
 </section>
 
+<!-- PROCESS -->
 <section class="page-process">
-  <div class="sec-header">
-    <p class="label-center">Our Process</p>
-    <div class="heading">How We Deliver Home Services Leads</div>
-  </div>
-  <div class="proc-grid">
-        <div class="proc-step">
-          <div class="proc-num">01</div>
-          <h4>Choose Your Trades</h4>
-          <p>Select services, define service area and capacity.</p>
-        </div>
-        <div class="proc-step">
-          <div class="proc-num">02</div>
-          <h4>Campaign Activation</h4>
-          <p>Targeted campaigns across search, social, and home platforms.</p>
-        </div>
-        <div class="proc-step">
-          <div class="proc-num">03</div>
-          <h4>Instant Delivery</h4>
-          <p>Qualified leads routed in real time with full project details.</p>
-        </div>
-        <div class="proc-step">
-          <div class="proc-num">04</div>
-          <h4>Weekly Optimization</h4>
-          <p>Performance reviews to adjust sources and volume.</p>
-        </div>
+  <div class="section-tag">Our Process</div>
+  <div class="section-heading">How We Deliver Home Services Leads</div>
+  <p class="section-desc"></p>
+  <div class="process-grid">
+    <div class="process-card"><div class="num">01</div><h4>Choose Your Trades</h4><p>Select services, define service area and capacity.</p></div>
+    <div class="process-card"><div class="num">02</div><h4>Campaign Activation</h4><p>Targeted campaigns across search, social, and home platforms.</p></div>
+    <div class="process-card"><div class="num">03</div><h4>Instant Delivery</h4><p>Qualified leads routed in real time with full project details.</p></div>
+    <div class="process-card"><div class="num">04</div><h4>Weekly Optimization</h4><p>Performance reviews to adjust sources and volume.</p></div>
   </div>
 </section>
 
+<!-- CTA -->
 <section class="cta">
-  <div class="cta-bg"></div>
-  <div class="cta-inner">
-    <p class="cta-label">Ready to Scale?</p>
-    <h2>Your Next Lead Is Waiting</h2>
+  <div class="pattern"></div>
+  <div class="cta-content">
+    <div class="section-tag">Ready to Scale?</div>
+    <div class="section-heading">Your Next Lead Is Waiting</div>
     <p>Get started today &mdash; no contracts, no minimums.</p>
-    <div class="cta-btns">
-      <a href="https://leads.wyngroupinc.com/login" target="_blank" rel="noopener" class="btn-primary">Get Started &rarr;</a>
-      <a href="https://leads.wyngroupinc.com/login" target="_blank" rel="noopener" class="btn-outline">Lead Portal</a>
+    <div class="btn-group">
+      <a href="https://leads.wyngroupinc.com/login" target="_blank" class="btn-teal">Get Started &rarr;</a>
+      <a href="https://leads.wyngroupinc.com/login" target="_blank" class="btn-ghost">Lead Portal</a>
     </div>
   </div>
 </section>
 
-<footer>
+<!-- FOOTER -->
+<footer class="footer">
   <div class="footer-inner">
-    <div class="footer-top">
+    <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="logo"><svg width="180" height="30" viewBox="0 0 420 70" xmlns="http://www.w3.org/2000/svg"><g transform="translate(4,10)"><rect x="0" y="16" width="5" height="20" rx="2.5" transform="rotate(-18,2.5,26)" fill="#1a9988" opacity=".2"/><rect x="10" y="9" width="6.5" height="30" rx="3.25" transform="rotate(-18,13.25,24)" fill="#1a9988" opacity=".4"/><rect x="23" y="3" width="8" height="40" rx="4" transform="rotate(-18,27,23)" fill="#1a9988" opacity=".65"/><rect x="38" y="0" width="10" height="48" rx="5" transform="rotate(-18,43,24)" fill="#1a9988"/></g><text x="56" y="45" font-family="DM Sans,sans-serif" font-size="32" letter-spacing="1.5"><tspan font-weight="700" fill="#111">Wyn Group </tspan><tspan font-weight="300" fill="#aaa">Inc</tspan></text></svg></a>
-        <p>Premium lead generation for modern buyer operations. Exclusive, compliant, real-time delivery.</p>
+        <a href="index.html" class="nav-logo">
+          <svg width="180" height="30" viewBox="0 0 420 70"><g transform="translate(4,10)"><rect x="0" y="16" width="5" height="20" rx="2.5" transform="rotate(-18,2.5,26)" fill="#1a9988" opacity=".2"/><rect x="10" y="9" width="6.5" height="30" rx="3.25" transform="rotate(-18,13.25,24)" fill="#1a9988" opacity=".4"/><rect x="23" y="3" width="8" height="40" rx="4" transform="rotate(-18,27,23)" fill="#1a9988" opacity=".65"/><rect x="38" y="0" width="10" height="48" rx="5" transform="rotate(-18,43,24)" fill="#1a9988"/></g><text x="56" y="45" font-family="DM Sans,sans-serif" font-size="32" letter-spacing="1.5"><tspan font-weight="700" fill="#111">Wyn Group </tspan><tspan font-weight="300" fill="#aaa">Inc</tspan></text></svg>
+        </a>
+        <p>Premium lead generation for modern buyer operations. Exclusive, compliant, real-time.</p>
       </div>
-      <div class="footer-links">
+      <div class="footer-cols">
         <div class="footer-col"><h4>Solutions</h4><a href="index.html#services">Real-Time Leads</a><a href="index.html#services">Exclusive Leads</a><a href="index.html#services">Aged Leads</a><a href="index.html#services">API Integration</a></div>
         <div class="footer-col"><h4>Industries</h4><a href="solar.html">Solar</a><a href="insurance.html">Insurance</a><a href="home-services.html">Home Services</a><a href="finance.html">Finance</a><a href="healthcare.html">Healthcare</a><a href="auto.html">Auto</a></div>
-        <div class="footer-col"><h4>Buyers</h4><a href="https://leads.wyngroupinc.com/login" target="_blank" rel="noopener">Lead Portal</a><a href="index.html#how">How It Works</a></div>
+        <div class="footer-col"><h4>Buyers</h4><a href="https://leads.wyngroupinc.com/login" target="_blank">Lead Portal</a><a href="index.html#how">How It Works</a></div>
       </div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2026 Wyn Group Inc.</p><p><a href="#">Privacy</a> &middot; <a href="#">Terms</a></p></div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Wyn Group Inc.</p>
+      <p><a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </div>
   </div>
 </footer>
 

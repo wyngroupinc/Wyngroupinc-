@@ -81,7 +81,7 @@ a{text-decoration:none}
 .how{padding:80px 4%;background:var(--bg)}
 .hg{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1100px;margin:0 auto}
 .hc{text-align:center;padding:16px}
-.hc .nu{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:rgba(0,53,118,.07);margin-bottom:8px}
+.hc .nu{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:rgba(0,53,118,.35);margin-bottom:8px}
 .hc h3{font-size:15px;font-weight:600;margin-bottom:4px}
 .hc p{font-size:13px;color:var(--mt);line-height:1.6;font-weight:300}
 
@@ -160,9 +160,24 @@ a{text-decoration:none}
 .pp{padding:72px 4%;background:var(--bg)}
 .ppg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1100px;margin:0 auto}
 .ppc{text-align:center;padding:16px}
-.ppc .nu{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:rgba(0,53,118,.07);margin-bottom:6px}
+.ppc .nu{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:rgba(0,53,118,.35);margin-bottom:6px}
 .ppc h4{font-size:14px;font-weight:600;margin-bottom:4px}
 .ppc p{font-size:13px;color:var(--mt);line-height:1.6;font-weight:300}
+
+/* STATS BAR */
+.stats{display:flex;justify-content:center;gap:48px;padding:48px 4%;background:var(--w);border-bottom:1px solid var(--ln)}
+.stat{text-align:center}
+.stat h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--n);margin-bottom:2px}
+.stat p{font-size:11px;color:var(--mt);text-transform:uppercase;letter-spacing:2px;font-weight:500}
+
+/* WHY SECTION */
+.why{padding:72px 4%}
+.why-g{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1100px;margin:0 auto}
+.wy{display:flex;gap:14px;padding:24px 20px;border:1px solid var(--ln);border-radius:12px;transition:.3s}
+.wy:hover{border-color:rgba(26,153,136,.15);box-shadow:0 4px 16px rgba(0,0,0,.04)}
+.wy .wk{flex-shrink:0;width:36px;height:36px;border-radius:8px;background:rgba(26,153,136,.07);color:var(--t);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.wy h4{font-size:14px;font-weight:600;margin-bottom:3px}
+.wy p{font-size:13px;color:var(--mt);line-height:1.6;font-weight:300}
 
 /* RESPONSIVE */
 @media(max-width:1024px){
@@ -172,6 +187,9 @@ a{text-decoration:none}
 .hg,.ppg{grid-template-columns:repeat(2,1fr)}
 .pw-g{grid-template-columns:1fr}
 .psg{grid-template-columns:repeat(2,1fr)}
+.why-g{grid-template-columns:1fr 1fr}
+.stats{gap:32px;flex-wrap:wrap}
+.prob>div{grid-template-columns:1fr !important}
 }
 @media(max-width:768px){
 .nm,.na{display:none}
@@ -179,11 +197,14 @@ a{text-decoration:none}
 .nm.on .dm{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none}
 .ht{display:flex;z-index:101}
 .sg,.tg,.fg{grid-template-columns:1fr}
+.why-g{grid-template-columns:1fr}
 .vg{grid-template-columns:repeat(2,1fr)}
 .psg{grid-template-columns:1fr}
 .hg,.ppg{grid-template-columns:1fr 1fr}
 .ft-g{flex-direction:column}
 .ft-c{gap:32px;flex-wrap:wrap}
+.stats{gap:20px;padding:32px 4%}
+.stat h3{font-size:22px}
 .ft-bt{flex-direction:column;gap:4px;text-align:center}
 }
 </style>
@@ -220,7 +241,7 @@ a{text-decoration:none}
   <div class="hero-in">
     <div class="pill"><span class="dot"></span> Exclusive Leads &middot; Real-Time Delivery</div>
     <h1>Premium Leads<br>That Actually <em>Convert</em></h1>
-    <p>We deliver exclusive, high-intent leads directly to your pipeline &mdash; verified, filtered, and ready to close. No contracts. No minimums.</p>
+    <p>Stop wasting budget on recycled data and dead numbers. Wyn Group delivers exclusive, high-intent leads directly to your CRM &mdash; verified, filtered, and ready to close. No contracts. No minimums. Start in 24 hours.</p>
     <div class="br">
       <a href="https://leads.wyngroupinc.com/login" target="_blank" class="bt">Start Buying Leads &rarr;</a>
       <a href="https://leads.wyngroupinc.com/login" target="_blank" class="bn">Access Lead Portal</a>
@@ -239,36 +260,74 @@ a{text-decoration:none}
   </div>
 </section>
 
+<div class="stats">
+  <div class="stat"><h3>50M+</h3><p>Leads Delivered</p></div>
+  <div class="stat"><h3>6</h3><p>Verticals Served</p></div>
+  <div class="stat"><h3>Real-Time</h3><p>Delivery Speed</p></div>
+  <div class="stat"><h3>100%</h3><p>TCPA Compliant</p></div>
+</div>
+
 <section class="svc" id="svc">
   <p class="st">What We Deliver</p>
   <p class="sh">Lead Solutions Built for Buyers</p>
-  <p class="sd">Every lead is verified, compliant, and delivered in real time.</p>
+  <p class="sd">Every lead is verified, consent-documented, and delivered in real time &mdash; engineered for maximum close rates and zero compliance risk.</p>
   <div class="sg">
-    <div class="sc"><div class="ic">&#9889;</div><h3>Real-Time Leads</h3><p>Exclusive leads the instant they're generated. Direct-to-CRM via API, ping/post, or portal.</p></div>
-    <div class="sc"><div class="ic">&#127919;</div><h3>Exclusive &amp; Shared</h3><p>Exclusive leads sold only to you, or shared with controlled buyer caps.</p></div>
-    <div class="sc"><div class="ic">&#128269;</div><h3>Aged Leads &amp; Data</h3><p>High-volume aged packages for nurturing. Segmented by vertical and geography.</p></div>
-    <div class="sc"><div class="ic">&#128202;</div><h3>Buyer Dashboard</h3><p>Track delivery, review leads, manage filters, dispute returns, analyze performance.</p></div>
-    <div class="sc"><div class="ic">&#128279;</div><h3>API &amp; CRM</h3><p>Ping/post, Zapier, Salesforce, and custom endpoints supported.</p></div>
-    <div class="sc"><div class="ic">&#128737;&#65039;</div><h3>Compliance</h3><p>TCPA-compliant with Jornaya, TrustedForm, and complete audit trails.</p></div>
+    <div class="sc"><div class="ic">&#9889;</div><h3>Real-Time Leads</h3><p>Receive exclusive leads the instant they convert. No aging, no recycling, no stale data. Delivered via API, ping/post, or portal download within seconds.</p></div>
+    <div class="sc"><div class="ic">&#127919;</div><h3>Exclusive &amp; Shared</h3><p>Choose exclusive leads sold only to you for maximum close rates, or shared leads with controlled 2-3 buyer caps to stretch your budget further.</p></div>
+    <div class="sc"><div class="ic">&#128269;</div><h3>Aged Leads &amp; Data</h3><p>High-volume aged lead packages perfect for nurture campaigns and re-engagement. Segmented by vertical, geography, date, and consumer profile.</p></div>
+    <div class="sc"><div class="ic">&#128202;</div><h3>Buyer Dashboard</h3><p>Full campaign transparency through your dedicated portal. Track delivery in real time, review lead details, manage filters, dispute returns, and analyze ROI.</p></div>
+    <div class="sc"><div class="ic">&#128279;</div><h3>API &amp; CRM Integration</h3><p>Seamlessly connect to your existing tech stack. We support ping/post, Zapier, Salesforce, HubSpot, and custom API endpoints out of the box.</p></div>
+    <div class="sc"><div class="ic">&#128737;&#65039;</div><h3>Compliance Built In</h3><p>Every lead includes full TCPA consent documentation, Jornaya LeadID, TrustedForm certificates, and complete audit trails. Zero compliance risk.</p></div>
+  </div>
+</section>
+
+<section class="prob" style="padding:64px 4%;background:var(--w);">
+  <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
+    <div>
+      <p class="st" style="text-align:left">The Problem</p>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(22px,2.5vw,28px);font-weight:600;margin-bottom:14px">Most Lead Vendors Are Selling You Garbage</h2>
+      <p style="font-size:15px;color:var(--mt);line-height:1.75;font-weight:300;margin-bottom:12px">If you've bought leads before, you know the pain: disconnected numbers, fake emails, leads sold to 8 other buyers, and zero consent documentation. You burn through your budget calling people who never asked to be contacted.</p>
+      <p style="font-size:15px;color:var(--mt);line-height:1.75;font-weight:300">The result? Low contact rates, wasted sales hours, compliance risk, and shrinking margins. Your team deserves better data.</p>
+    </div>
+    <div>
+      <p class="st" style="text-align:left">The Wyn Group Difference</p>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(22px,2.5vw,28px);font-weight:600;margin-bottom:14px">Leads That Your Team Actually Wants to Call</h2>
+      <p style="font-size:15px;color:var(--mt);line-height:1.75;font-weight:300;margin-bottom:12px">Every lead we deliver is generated from our own media campaigns, verified in real time, and enriched with the data your sales team needs to close. Full TCPA consent. Full transparency. Full control through your buyer portal.</p>
+      <p style="font-size:15px;color:var(--mt);line-height:1.75;font-weight:300"><strong style="color:var(--tx)">No contracts. No minimums. No risk.</strong> Start with 10 leads a day or 10,000. Scale on your terms. Pause anytime. Your first leads can be flowing within 48 hours.</p>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <p class="st">The Wyn Advantage</p>
+  <p class="sh">Why Buyers Choose Wyn Group</p>
+  <p class="sd">We're not another lead vendor. We're a performance partner built for serious buyers.</p>
+  <div class="why-g">
+    <div class="wy"><div class="wk">&#10003;</div><div><h4>No Contracts, Ever</h4><p>Start, pause, or scale at any time. You're never locked in. Buy leads on your terms.</p></div></div>
+    <div class="wy"><div class="wk">&#10003;</div><div><h4>Transparent Returns</h4><p>Dispute invalid leads directly in your portal. Fair, fast resolution on every claim &mdash; no runaround.</p></div></div>
+    <div class="wy"><div class="wk">&#10003;</div><div><h4>Dedicated Account Manager</h4><p>A real human optimizing your campaigns weekly &mdash; not a chatbot or ticketing system.</p></div></div>
+    <div class="wy"><div class="wk">&#10003;</div><div><h4>Multi-Source Inventory</h4><p>We aggregate from 100+ vetted publishers and media channels for maximum scale and quality.</p></div></div>
+    <div class="wy"><div class="wk">&#10003;</div><div><h4>Full Compliance Stack</h4><p>TCPA consent, Jornaya, TrustedForm, and state-level disclosures on every single lead. Audit-ready.</p></div></div>
+    <div class="wy"><div class="wk">&#10003;</div><div><h4>Live Portal Reporting</h4><p>Real-time visibility into delivery, spend, contact rates, and ROI. Make decisions with data, not guesswork.</p></div></div>
   </div>
 </section>
 
 <section class="how" id="how">
   <p class="st">How It Works</p>
   <p class="sh">From Setup to Scale in Days</p>
-  <p class="sd">Getting started is effortless. Designed for speed.</p>
+  <p class="sd">Most buyers are live within 48 hours. No lengthy onboarding. No technical headaches.</p>
   <div class="hg">
-    <div class="hc"><div class="nu">01</div><h3>Consultation</h3><p>Tell us your customer profile, volume, geo, and budget.</p></div>
-    <div class="hc"><div class="nu">02</div><h3>Portal Setup</h3><p>Dedicated portal with dashboards, filters, and delivery preferences.</p></div>
-    <div class="hc"><div class="nu">03</div><h3>Lead Delivery</h3><p>Leads flow to your portal or CRM in real time.</p></div>
-    <div class="hc"><div class="nu">04</div><h3>Optimize</h3><p>Continuous optimization with full performance transparency.</p></div>
+    <div class="hc"><div class="nu">01</div><h3>Consultation</h3><p>Tell us your ideal customer, volume goals, geography, and budget. We'll design a custom lead program in one call.</p></div>
+    <div class="hc"><div class="nu">02</div><h3>Portal Setup</h3><p>Get your dedicated buyer portal within 24 hours &mdash; complete with real-time dashboards, filters, and delivery preferences.</p></div>
+    <div class="hc"><div class="nu">03</div><h3>Lead Delivery</h3><p>Leads start flowing to your portal or CRM in real time. Review, accept, and work your leads the same day.</p></div>
+    <div class="hc"><div class="nu">04</div><h3>Optimize &amp; Scale</h3><p>We review performance weekly and continuously optimize sources, filters, and volume to maximize your ROI.</p></div>
   </div>
 </section>
 
 <section class="vrt" id="vrt">
   <p class="st">Industries</p>
   <p class="sh">Verticals We Serve</p>
-  <p class="sd">High-intent leads across the industries that matter most.</p>
+  <p class="sd">We specialize in the verticals where lead quality matters most. Every campaign is built by industry experts who understand your market.</p>
   <div class="vg">
     <a href="solar.html" class="vc"><span class="vi">&#9728;&#65039;</span><h4>Solar</h4><p>Residential &amp; Commercial</p></a>
     <a href="home-services.html" class="vc"><span class="vi">&#127968;</span><h4>Home Services</h4><p>HVAC, Roofing, Plumbing</p></a>
@@ -286,18 +345,18 @@ a{text-decoration:none}
   <div class="tg">
     <div class="tc">
       <div class="sr">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <blockquote>"Wyn Group transformed our pipeline. Volume and quality exceeded expectations."</blockquote>
-      <div class="au"><div class="av">MR</div><div><strong>Michael R.</strong><br><span>VP of Sales, Solar</span></div></div>
+      <blockquote>"Wyn Group completely transformed our pipeline. We went from chasing bad data to closing deals daily. The portal makes managing leads effortless."</blockquote>
+      <div class="au"><div class="av">MR</div><div><strong>Michael R.</strong><br><span>VP of Sales, Solar Company</span></div></div>
     </div>
     <div class="tc">
       <div class="sr">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <blockquote>"Compliance gave us confidence to scale. Every lead has full documentation."</blockquote>
-      <div class="au"><div class="av">SK</div><div><strong>Sarah K.</strong><br><span>Marketing Director, Insurance</span></div></div>
+      <blockquote>"The compliance documentation gave us confidence to scale aggressively. Every lead has full TCPA consent. Best lead vendor we've ever worked with."</blockquote>
+      <div class="au"><div class="av">SK</div><div><strong>Sarah K.</strong><br><span>Marketing Director, Insurance Agency</span></div></div>
     </div>
     <div class="tc">
       <div class="sr">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <blockquote>"Incredibly responsive team. Portal reporting is best in class."</blockquote>
-      <div class="au"><div class="av">JD</div><div><strong>James D.</strong><br><span>Owner, Home Services</span></div></div>
+      <blockquote>"We scaled from 50 leads a week to over 500. The account team is incredibly responsive and the real-time portal reporting is the best I've seen."</blockquote>
+      <div class="au"><div class="av">JD</div><div><strong>James D.</strong><br><span>Owner, Home Services Company</span></div></div>
     </div>
   </div>
 </section>
@@ -307,7 +366,7 @@ a{text-decoration:none}
   <div class="cta-in">
     <p class="st">Ready to Scale?</p>
     <p class="sh">Your Next Lead Is Waiting</p>
-    <p>Get started today &mdash; no contracts, no minimums.</p>
+    <p>Join hundreds of buyers who trust Wyn Group to fuel their growth. No contracts, no minimums, no risk. Your first leads can be flowing within 48 hours.</p>
     <div class="br">
       <a href="https://leads.wyngroupinc.com/login" target="_blank" class="bt">Get Started &rarr;</a>
       <a href="https://leads.wyngroupinc.com/login" target="_blank" class="bg">Lead Portal</a>

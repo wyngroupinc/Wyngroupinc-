@@ -10,6 +10,10 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2732%27 fill=%27%231a9988%27/%3E%3Cg transform=%27translate(18,12)%27%3E%3Crect x=%270%27 y=%2713%27 width=%274%27 height=%2716%27 rx=%272%27 transform=%27rotate(-18,2,21)%27 fill=%27white%27 opacity=%27.3%27/%3E%3Crect x=%278%27 y=%277%27 width=%275%27 height=%2724%27 rx=%272.5%27 transform=%27rotate(-18,10.5,19)%27 fill=%27white%27 opacity=%27.5%27/%3E%3Crect x=%2718%27 y=%272%27 width=%276.5%27 height=%2732%27 rx=%273.25%27 transform=%27rotate(-18,21.25,18)%27 fill=%27white%27 opacity=%27.75%27/%3E%3Crect x=%2730%27 y=%270%27 width=%278%27 height=%2738%27 rx=%274%27 transform=%27rotate(-18,34,19)%27 fill=%27white%27/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.leadconnectorhq.com">
+<link rel="preconnect" href="https://link.msgsndr.com">
+<link rel="dns-prefetch" href="https://api.leadconnectorhq.com">
+<link rel="dns-prefetch" href="https://link.msgsndr.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -39,6 +43,16 @@ a{text-decoration:none}
 .fp-card-h{text-align:center;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid var(--ln)}
 .fp-card-h h2{font-family:'Playfair Display',serif;font-size:24px;font-weight:600;margin-bottom:4px}
 .fp-card-h p{font-size:13px;color:var(--mt);font-weight:300}
+@keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.fp-loading{padding:60px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:700px;background:var(--w)}
+.fp-spinner{width:36px;height:36px;border:3px solid var(--ln);border-top-color:var(--t);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:16px}
+.fp-loading p{font-size:14px;color:var(--mt);font-weight:400;margin-bottom:24px}
+.fp-bars{width:100%;max-width:500px}
+.fp-bars .bar{height:14px;border-radius:6px;background:linear-gradient(90deg,#eee 25%,#e0e0e0 50%,#eee 75%);background-size:400px;animation:shimmer 1.5s infinite;margin-bottom:12px}
+.fp-bars .bar-lg{width:100%;height:44px;border-radius:10px}
+.fp-bars .bar-md{width:70%}
+.fp-bars .bar-sm{width:45%}
 .fp-card iframe{width:100%;min-height:800px;border:none;border-radius:4px}
 
 .fp-below{max-width:800px;margin:28px auto 0}
@@ -94,9 +108,25 @@ a{text-decoration:none}
       <h2>Start Buying Leads</h2>
       <p>No commitment required</p>
     </div>
+    <div class="fp-loading" id="formLoader">
+      <div class="fp-spinner"></div>
+      <p>Loading your form...</p>
+      <div class="fp-bars">
+        <div class="bar bar-sm"></div>
+        <div class="bar bar-lg"></div>
+        <div class="bar bar-sm"></div>
+        <div class="bar bar-lg"></div>
+        <div class="bar bar-md"></div>
+        <div class="bar bar-lg"></div>
+        <div class="bar bar-sm"></div>
+        <div class="bar bar-lg"></div>
+        <div class="bar bar-md"></div>
+        <div class="bar bar-lg" style="margin-top:20px"></div>
+      </div>
+    </div>
     <iframe
       src="https://api.leadconnectorhq.com/widget/form/pjCAl2ufKk1tm2zkJRK3"
-      style="width:100%;height:100%;border:none;border-radius:3px"
+      style="width:100%;height:100%;border:none;border-radius:3px;opacity:0;transition:opacity .4s"
       id="inline-pjCAl2ufKk1tm2zkJRK3"
       data-layout="{'id':'INLINE'}"
       data-trigger-type="alwaysShow"
@@ -110,6 +140,7 @@ a{text-decoration:none}
       data-layout-iframe-id="inline-pjCAl2ufKk1tm2zkJRK3"
       data-form-id="pjCAl2ufKk1tm2zkJRK3"
       title="Business Loans Buyers"
+      onload="document.getElementById('formLoader').style.display='none';this.style.opacity='1'"
     ></iframe>
     <script src="https://link.msgsndr.com/js/form_embed.js"></script>
   </div>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get Roofing Leads — Wyn Group Inc</title>
+<meta name="description" content="Start receiving exclusive roofing leads from verified homeowners. Fill out the form to check your territory.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2732%27 fill=%27%231a9988%27/%3E%3Cg transform=%27translate(18,12)%27%3E%3Crect x=%270%27 y=%2713%27 width=%274%27 height=%2716%27 rx=%272%27 transform=%27rotate(-18,2,21)%27 fill=%27white%27 opacity=%27.3%27/%3E%3Crect x=%278%27 y=%277%27 width=%275%27 height=%2724%27 rx=%272.5%27 transform=%27rotate(-18,10.5,19)%27 fill=%27white%27 opacity=%27.5%27/%3E%3Crect x=%2718%27 y=%272%27 width=%276.5%27 height=%2732%27 rx=%273.25%27 transform=%27rotate(-18,21.25,18)%27 fill=%27white%27 opacity=%27.75%27/%3E%3Crect x=%2730%27 y=%270%27 width=%278%27 height=%2738%27 rx=%274%27 transform=%27rotate(-18,34,19)%27 fill=%27white%27/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.leadconnectorhq.com">
+<link rel="preconnect" href="https://link.msgsndr.com">
+<link rel="dns-prefetch" href="https://api.leadconnectorhq.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--t:#1a9988;--td:#15826f;--n:#003576;--w:#fff;--bg:#f8f8f8;--tx:#111827;--gr:#374151;--mt:#6b7280;--ln:#e5e7eb}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--tx);background:var(--bg);min-height:100vh}
+a{text-decoration:none;color:inherit}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}
+
+/* URGENCY */
+.urg{background:var(--n);color:#fff;text-align:center;padding:10px 16px;font-size:13px;font-weight:500}
+.urg strong{color:#5ce0d0}
+
+/* NAV */
+.lnav{display:flex;align-items:center;justify-content:space-between;padding:14px 4%;background:var(--w);border-bottom:1px solid var(--ln)}
+.lnav svg{height:38px;width:auto}
+.lnav .back{color:var(--mt);font-size:13px;font-weight:500;transition:.2s}
+.lnav .back:hover{color:var(--t)}
+
+/* PROGRESS */
+.progress{display:flex;justify-content:center;gap:8px;padding:20px 4% 0;max-width:400px;margin:0 auto}
+.ps{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--mt)}
+.ps.active{color:var(--n);font-weight:600}
+.ps .circ{width:22px;height:22px;border-radius:50%;border:2px solid var(--ln);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700}
+.ps.active .circ{border-color:var(--n);color:var(--n)}
+.pl{width:32px;height:2px;background:var(--ln);align-self:center}
+
+/* HERO */
+.hero{padding:40px 4% 24px;text-align:center;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(26,153,136,.06),transparent 55%),linear-gradient(to bottom,#fff,#f7fbfa,var(--bg))}
+.hero-in{max-width:640px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:50px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:rgba(26,153,136,.06);border:1px solid rgba(26,153,136,.15);color:var(--t);margin-bottom:14px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,38px);font-weight:700;line-height:1.12;margin-bottom:10px}
+.hero h1 em{font-style:italic;color:var(--t)}
+.hero>div>p{font-size:15px;color:var(--mt);max-width:500px;margin:0 auto 20px;line-height:1.7;font-weight:300}
+
+/* TRUST STRIP */
+.trust{display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
+.ti{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--gr);font-weight:500}
+.ti .ck{width:20px;height:20px;border-radius:5px;background:rgba(26,153,136,.08);color:var(--t);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700}
+
+/* INLINE QUOTE */
+.quote{max-width:600px;margin:20px auto 0;text-align:center;padding:16px 20px;border-radius:10px;background:var(--w);border:1px solid var(--ln)}
+.quote .stars{color:#d4a017;font-size:12px;letter-spacing:2px;margin-bottom:6px}
+.quote blockquote{font-size:13px;color:var(--gr);line-height:1.65;font-style:italic;font-weight:300;margin-bottom:6px}
+.quote cite{font-size:11px;color:var(--mt);font-style:normal;font-weight:500}
+
+/* FORM */
+.form-sec{padding:36px 4% 48px}
+.form-card{max-width:800px;margin:0 auto;background:var(--w);border:1px solid var(--ln);border-radius:20px;padding:32px 28px;box-shadow:0 8px 40px rgba(0,0,0,.05)}
+.form-head{text-align:center;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--ln)}
+.form-head h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;margin-bottom:3px}
+.form-head p{font-size:13px;color:var(--mt);font-weight:300}
+
+/* Loading */
+.loading{padding:60px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:700px}
+.spinner{width:36px;height:36px;border:3px solid var(--ln);border-top-color:var(--t);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:16px}
+.loading p{font-size:14px;color:var(--mt);font-weight:400;margin-bottom:24px}
+.bars{width:100%;max-width:500px}
+.bars .bar{height:14px;border-radius:6px;background:linear-gradient(90deg,#eee 25%,#e0e0e0 50%,#eee 75%);background-size:400px;animation:shimmer 1.5s infinite;margin-bottom:12px}
+.bars .bar-lg{width:100%;height:44px;border-radius:10px}
+.bars .bar-md{width:70%}
+.bars .bar-sm{width:45%}
+
+.form-card iframe{width:100%;min-height:800px;border:none;border-radius:4px}
+
+/* FORM TRUST */
+.form-trust{display:flex;justify-content:center;gap:20px;margin-top:16px;padding-top:14px;border-top:1px solid var(--ln);flex-wrap:wrap}
+.form-trust span{font-size:11px;color:var(--mt);display:flex;align-items:center;gap:5px}
+.form-trust .lock{color:var(--t);font-size:13px}
+
+/* GUARANTEE */
+.guar{text-align:center;padding:24px 28px;border:1px solid rgba(26,153,136,.15);border-radius:14px;background:linear-gradient(135deg,rgba(26,153,136,.02),rgba(0,53,118,.02));max-width:800px;margin:24px auto 0}
+.guar h4{font-size:14px;font-weight:600;margin-bottom:4px}
+.guar p{font-size:13px;color:var(--mt);line-height:1.6;font-weight:300;max-width:520px;margin:0 auto}
+
+/* STATS */
+.stats{display:flex;justify-content:center;gap:0;border:1px solid var(--ln);border-radius:12px;overflow:hidden;background:var(--w);max-width:800px;margin:24px auto 0}
+.st{flex:1;text-align:center;padding:20px 16px}
+.st+.st{border-left:1px solid var(--ln)}
+.st h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--n)}
+.st p{font-size:10px;color:var(--mt);text-transform:uppercase;letter-spacing:1.5px;font-weight:500;margin-top:1px}
+
+/* OBJECTION BUSTERS */
+.obj{padding:48px 4%;background:var(--w)}
+.obj-in{max-width:700px;margin:0 auto}
+.obj h3{font-family:'Playfair Display',serif;font-size:clamp(20px,2.5vw,26px);font-weight:600;text-align:center;margin-bottom:24px}
+.ob-list{display:flex;flex-direction:column;gap:12px}
+.ob{display:flex;gap:12px;padding:16px 18px;border:1px solid var(--ln);border-radius:10px;align-items:flex-start}
+.ob .ico{flex-shrink:0;width:32px;height:32px;border-radius:8px;background:rgba(26,153,136,.06);color:var(--t);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700}
+.ob h4{font-size:14px;font-weight:600;margin-bottom:2px}
+.ob p{font-size:13px;color:var(--mt);line-height:1.6;font-weight:300}
+
+/* REVIEWS */
+.rev{padding:48px 4%;background:var(--bg)}
+.rev h3{font-family:'Playfair Display',serif;font-size:clamp(20px,2.5vw,26px);font-weight:600;text-align:center;margin-bottom:24px}
+.revg{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:800px;margin:0 auto}
+.rc{background:var(--w);border:1px solid var(--ln);border-radius:12px;padding:20px 18px;position:relative;overflow:hidden}
+.rc::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--t)}
+.rc:nth-child(even)::before{background:var(--n)}
+.rc .stars{color:#d4a017;font-size:12px;margin-bottom:6px;letter-spacing:2px}
+.rc blockquote{font-size:13px;color:var(--gr);line-height:1.7;font-style:italic;font-weight:300;margin-bottom:10px}
+.rc .who{display:flex;align-items:center;gap:8px}
+.rc .av{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--t),var(--n));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:11px;flex-shrink:0}
+.rc .who strong{font-size:12px;display:block}
+.rc .who span{font-size:10px;color:var(--mt)}
+
+/* FINAL PUSH */
+.push{padding:40px 4%;text-align:center;background:var(--w);border-top:1px solid var(--ln)}
+.push p{font-size:15px;color:var(--gr);font-weight:500;margin-bottom:12px}
+.push a{display:inline-block;background:var(--t);color:#fff;font-size:15px;font-weight:600;padding:14px 32px;border-radius:10px;transition:.3s}
+.push a:hover{background:var(--td);transform:translateY(-2px)}
+
+.lft{padding:24px 4%;text-align:center;border-top:1px solid var(--ln);background:var(--bg)}
+.lft p{font-size:12px;color:var(--mt)}
+.lft a{color:var(--mt)}
+.lft a:hover{color:var(--t)}
+
+@media(max-width:768px){
+  .revg{grid-template-columns:1fr}
+  .stats{flex-direction:column}
+  .st+.st{border-left:none;border-top:1px solid var(--ln)}
+  .form-trust{gap:12px}
+}
+@media(max-width:600px){
+  .form-card{padding:24px 16px;border-radius:14px}
+  .trust{gap:10px 20px}
+  .progress{gap:4px}
+  .pl{width:20px}
+}
+</style>
+</head>
+<body>
+
+<!-- URGENCY -->
+<div class="urg">
+  <strong>Limited availability:</strong> We only work with one roofing company per area. Check if yours is open.
+</div>
+
+<!-- NAV -->
+<div class="lnav">
+  <a href="index.html">
+    <svg width="220" height="38" viewBox="0 0 420 70"><g transform="translate(4,10)"><rect x="0" y="16" width="5" height="20" rx="2.5" transform="rotate(-18,2.5,26)" fill="#1a9988" opacity=".2"/><rect x="10" y="9" width="6.5" height="30" rx="3.25" transform="rotate(-18,13.25,24)" fill="#1a9988" opacity=".4"/><rect x="23" y="3" width="8" height="40" rx="4" transform="rotate(-18,27,23)" fill="#1a9988" opacity=".65"/><rect x="38" y="0" width="10" height="48" rx="5" transform="rotate(-18,43,24)" fill="#1a9988"/></g><text x="56" y="45" font-family="DM Sans,sans-serif" font-size="32" letter-spacing="1.5"><tspan font-weight="700" fill="#111">Wyn Group </tspan><tspan font-weight="300" fill="#aaa">Inc</tspan></text></svg>
+  </a>
+  <a href="javascript:history.back()" class="back">&larr; Back</a>
+</div>
+
+<!-- PROGRESS -->
+<div class="progress">
+  <div class="ps active"><span class="circ">1</span> Apply</div>
+  <div class="pl"></div>
+  <div class="ps"><span class="circ">2</span> Schedule</div>
+  <div class="pl"></div>
+  <div class="ps"><span class="circ">3</span> Go Live</div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-in">
+    <div class="badge">&#9889; Exclusive Roofing Leads</div>
+    <h1>You're One Step Away From <em>Better Roofing Jobs</em></h1>
+    <p>Fill out the form below. Next step: pick a time to speak with a lead strategist who'll get your territory locked in.</p>
+    <div class="trust">
+      <div class="ti"><span class="ck">&#10003;</span> Exclusive territory</div>
+      <div class="ti"><span class="ck">&#10003;</span> Verified homeowners</div>
+      <div class="ti"><span class="ck">&#10003;</span> Real-time delivery</div>
+      <div class="ti"><span class="ck">&#10003;</span> No contracts</div>
+    </div>
+    <div class="quote">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote>"Filled out this form, had a call the next day, and signed 9 roofing jobs in my first month. Best decision I made for my business."</blockquote>
+      <cite>&mdash; Mike J., Owner, Peak Roofing Co.</cite>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-sec" id="form-top">
+  <div class="form-card">
+    <div class="form-head">
+      <h2>Check Your Territory</h2>
+      <p>Takes 60 seconds &middot; No commitment required</p>
+    </div>
+    <div class="loading" id="formLoader">
+      <div class="spinner"></div>
+      <p>Loading your form...</p>
+      <div class="bars">
+        <div class="bar bar-sm"></div>
+        <div class="bar bar-lg"></div>
+        <div class="bar bar-sm"></div>
+        <div class="bar bar-lg"></div>
+        <div class="bar bar-md"></div>
+        <div class="bar bar-lg"></div>
+        <div class="bar bar-sm"></div>
+        <div class="bar bar-lg"></div>
+        <div class="bar bar-md"></div>
+        <div class="bar bar-lg" style="margin-top:20px"></div>
+      </div>
+    </div>
+    <iframe
+      src="https://api.leadconnectorhq.com/widget/form/eiaeHYAuRNOtAdqNx12i"
+      style="width:100%;height:100%;border:none;border-radius:3px;opacity:0;transition:opacity .4s"
+      id="inline-eiaeHYAuRNOtAdqNx12i"
+      data-layout="{'id':'INLINE'}"
+      data-trigger-type="alwaysShow"
+      data-trigger-value=""
+      data-activation-type="alwaysActivated"
+      data-activation-value=""
+      data-deactivation-type="neverDeactivate"
+      data-deactivation-value=""
+      data-form-name="Roofing Lead Buyers"
+      data-height="1341"
+      data-layout-iframe-id="inline-eiaeHYAuRNOtAdqNx12i"
+      data-form-id="eiaeHYAuRNOtAdqNx12i"
+      title="Roofing Lead Buyers"
+      onload="document.getElementById('formLoader').style.display='none';this.style.opacity='1'"
+    ></iframe>
+    <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+
+    <div class="form-trust">
+      <span><span class="lock">&#128274;</span> Your info is secure</span>
+      <span><span class="lock">&#128737;&#65039;</span> TCPA compliant</span>
+      <span><span class="lock">&#10003;</span> No spam, ever</span>
+      <span><span class="lock">&#9889;</span> Takes 60 seconds</span>
+    </div>
+  </div>
+
+  <div class="guar">
+    <h4>&#128737;&#65039; Quality Guarantee</h4>
+    <p>Wrong address, disconnected number, or not a homeowner? We replace it or credit your account within 24 hours. No questions asked.</p>
+  </div>
+
+  <div class="stats">
+    <div class="st"><h4>24hrs</h4><p>To Go Live</p></div>
+    <div class="st"><h4>Exclusive</h4><p>One Roofer Per Area</p></div>
+    <div class="st"><h4>Verified</h4><p>Homeowner Confirmed</p></div>
+    <div class="st"><h4>100%</h4><p>TCPA Compliant</p></div>
+  </div>
+</section>
+
+<!-- OBJECTION BUSTERS -->
+<section class="obj">
+  <div class="obj-in">
+    <h3>Still Thinking It Over?</h3>
+    <div class="ob-list">
+      <div class="ob"><div class="ico">&#128172;</div><div><h4>"I've been burned by lead vendors before."</h4><p>So have most of our roofers. That's why we built a transparent portal with real-time tracking and a no-questions return policy. Bad lead? We eat it, not you.</p></div></div>
+      <div class="ob"><div class="ico">&#127968;</div><div><h4>"How do I know these are real homeowners?"</h4><p>Every lead is verified for property ownership. No renters. No tire kickers. These are homeowners who just requested a roofing estimate for their property.</p></div></div>
+      <div class="ob"><div class="ico">&#128275;</div><div><h4>"I don't want to be locked into a contract."</h4><p>No contracts. No minimums. No commitments. Buy 5 leads or 500. Pause anytime. Cancel anytime. You're in full control.</p></div></div>
+      <div class="ob"><div class="ico">&#9202;</div><div><h4>"How fast can I be live?"</h4><p>Most roofers go from this form to receiving leads within 24 hours. One call, we set your territory, connect your CRM, and you're live.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="rev">
+  <h3>Roofers Who Started Right Here</h3>
+  <div class="revg">
+    <div class="rc">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote>"Was spending $4K/month on HomeAdvisor leads and closing 2 jobs. First month with Wyn Group — same budget, 9 signed contracts. The difference is night and day."</blockquote>
+      <div class="who"><div class="av">MJ</div><div><strong>Mike J.</strong><br><span>Owner, Peak Roofing Co.</span></div></div>
+    </div>
+    <div class="rc">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote>"After the last hailstorm we had 40 leads in our CRM within 48 hours. All verified homeowners. We were knocking doors before any other roofer even knew."</blockquote>
+      <div class="who"><div class="av">CS</div><div><strong>Carlos S.</strong><br><span>Sales Mgr, Apex Restoration</span></div></div>
+    </div>
+    <div class="rc">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote>"Close rate actually went UP when I increased volume. That never happened with Angi or HomeAdvisor. Tells you everything about the lead quality."</blockquote>
+      <div class="who"><div class="av">TR</div><div><strong>Tom R.</strong><br><span>Owner, Reliable Roof &amp; Siding</span></div></div>
+    </div>
+    <div class="rc">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote>"Cost per signed job dropped from $1,400 to under $500. Disputed 6 leads last month — all credited same day. Try getting that from anyone else."</blockquote>
+      <div class="who"><div class="av">BL</div><div><strong>Brian L.</strong><br><span>VP Sales, Regional Roofing</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL PUSH -->
+<section class="push">
+  <p>Your territory won't stay open forever. Every day you wait is a job your competitor closes instead. &#128070;</p>
+  <a href="#form-top">Fill Out the Form Above &rarr;</a>
+</section>
+
+<footer class="lft">
+  <p>&copy; 2026 Wyn Group Inc. &middot; <a href="index.html">Home</a> &middot; <a href="roofing.html">Roofing Leads</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
+
+</body>
+</html>

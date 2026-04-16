@@ -211,52 +211,32 @@ a{text-decoration:none;color:inherit}
         <div class="bar bar-lg" style="margin-top:20px"></div>
       </div>
     </div>
-    <div id="formWrap" style="overflow:hidden;max-height:700px;transition:max-height .3s">
     <iframe
       src="https://api.leadconnectorhq.com/widget/survey/3v3gpZqeigQjyBoeiszg"
-      style="border:none;width:100%;opacity:0;transition:opacity .4s"
-      scrolling="no"
+      style="border:none;width:100%;height:500px;opacity:0;transition:opacity .4s"
       id="3v3gpZqeigQjyBoeiszg"
       title="survey"
       onload="document.getElementById('formLoader').style.display='none';this.style.opacity='1'"
     ></iframe>
-    </div>
     <script src="https://link.msgsndr.com/js/form_embed.js"></script>
     <script>
-    // Expand wrapper + scroll to form on each step
-    window.addEventListener('message',function(e){
-      try{
-        var d=typeof e.data==='string'?JSON.parse(e.data):e.data;
-        if(d&&d.scrollHeight){
-          if(d.scrollHeight>700){
-            document.getElementById('formWrap').style.maxHeight=d.scrollHeight+'px';
-          }
-          // Smooth scroll to form top on every step change
+    (function(){
+      var iframe=document.getElementById('3v3gpZqeigQjyBoeiszg');
+      var lastH=0;
+      // Watch when GHL changes iframe height, cap it at 800
+      new MutationObserver(function(){
+        var h=parseInt(iframe.style.height)||500;
+        if(h>800){iframe.style.height='800px';h=800;}
+        if(h!==lastH){
+          lastH=h;
           var card=document.querySelector('.form-card');
           if(card){
             var top=card.getBoundingClientRect().top+window.scrollY-80;
             window.scrollTo({top:top,behavior:'smooth'});
           }
         }
-      }catch(x){}
-    });
-    // Also scroll when user clicks inside the iframe
-    var iframe=document.getElementById('3v3gpZqeigQjyBoeiszg');
-    if(iframe){
-      iframe.addEventListener('load',function(){
-        window.addEventListener('blur',function(){
-          if(document.activeElement===iframe){
-            setTimeout(function(){
-              var card=document.querySelector('.form-card');
-              if(card){
-                var top=card.getBoundingClientRect().top+window.scrollY-80;
-                window.scrollTo({top:top,behavior:'smooth'});
-              }
-            },300);
-          }
-        });
-      });
-    }
+      }).observe(iframe,{attributes:true,attributeFilter:['style']});
+    })();
     </script>
 
     <div class="form-trust">

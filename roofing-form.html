@@ -223,15 +223,40 @@ a{text-decoration:none;color:inherit}
     </div>
     <script src="https://link.msgsndr.com/js/form_embed.js"></script>
     <script>
-    // Expand wrapper when form gets taller on later steps
+    // Expand wrapper + scroll to form on each step
     window.addEventListener('message',function(e){
       try{
         var d=typeof e.data==='string'?JSON.parse(e.data):e.data;
-        if(d&&d.scrollHeight&&d.scrollHeight>350){
-          document.getElementById('formWrap').style.maxHeight=d.scrollHeight+'px';
+        if(d&&d.scrollHeight){
+          if(d.scrollHeight>350){
+            document.getElementById('formWrap').style.maxHeight=d.scrollHeight+'px';
+          }
+          // Smooth scroll to form top on every step change
+          var card=document.querySelector('.form-card');
+          if(card){
+            var top=card.getBoundingClientRect().top+window.scrollY-80;
+            window.scrollTo({top:top,behavior:'smooth'});
+          }
         }
       }catch(x){}
     });
+    // Also scroll when user clicks inside the iframe
+    var iframe=document.getElementById('3v3gpZqeigQjyBoeiszg');
+    if(iframe){
+      iframe.addEventListener('load',function(){
+        window.addEventListener('blur',function(){
+          if(document.activeElement===iframe){
+            setTimeout(function(){
+              var card=document.querySelector('.form-card');
+              if(card){
+                var top=card.getBoundingClientRect().top+window.scrollY-80;
+                window.scrollTo({top:top,behavior:'smooth'});
+              }
+            },300);
+          }
+        });
+      });
+    }
     </script>
 
     <div class="form-trust">

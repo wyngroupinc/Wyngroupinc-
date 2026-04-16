@@ -226,7 +226,7 @@ a{text-decoration:none;color:inherit}
       // Watch when GHL changes iframe height, cap it at 800
       new MutationObserver(function(){
         var h=parseInt(iframe.style.height)||500;
-        if(h>800){iframe.style.height='800px';h=800;}
+        if(h>1000){iframe.style.height='1000px';h=1000;}
         if(h!==lastH){
           lastH=h;
           var card=document.querySelector('.form-card');

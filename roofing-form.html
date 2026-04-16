@@ -211,6 +211,7 @@ a{text-decoration:none;color:inherit}
         <div class="bar bar-lg" style="margin-top:20px"></div>
       </div>
     </div>
+    <div id="formWrap" style="overflow:hidden;max-height:350px;transition:max-height .3s">
     <iframe
       src="https://api.leadconnectorhq.com/widget/survey/3v3gpZqeigQjyBoeiszg"
       style="border:none;width:100%;opacity:0;transition:opacity .4s"
@@ -219,7 +220,19 @@ a{text-decoration:none;color:inherit}
       title="survey"
       onload="document.getElementById('formLoader').style.display='none';this.style.opacity='1'"
     ></iframe>
+    </div>
     <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+    <script>
+    // Expand wrapper when form gets taller on later steps
+    window.addEventListener('message',function(e){
+      try{
+        var d=typeof e.data==='string'?JSON.parse(e.data):e.data;
+        if(d&&d.scrollHeight&&d.scrollHeight>350){
+          document.getElementById('formWrap').style.maxHeight=d.scrollHeight+'px';
+        }
+      }catch(x){}
+    });
+    </script>
 
     <div class="form-trust">
       <span><span class="lock">&#128274;</span> Your info is secure</span>
@@ -292,19 +305,5 @@ a{text-decoration:none;color:inherit}
   <p>&copy; 2026 Wyn Group Inc. &middot; <a href="index.html">Home</a> &middot; <a href="roofing.html">Roofing Leads</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
 </footer>
 
-<script>
-window.addEventListener('message',function(e){
-  if(e.data&&e.data.type==='form-height'||typeof e.data==='string'&&e.data.includes('height')){
-    try{
-      var d=typeof e.data==='string'?JSON.parse(e.data):e.data;
-      if(d.height||d.scrollHeight){
-        var h=d.height||d.scrollHeight;
-        var f=document.getElementById('3v3gpZqeigQjyBoeiszg');
-        if(f&&h>100)f.style.height=h+'px';
-      }
-    }catch(ex){}
-  }
-});
-</script>
 </body>
 </html>

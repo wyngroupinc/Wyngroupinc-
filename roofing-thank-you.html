@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You're All Set — Wyn Group Inc</title>
+<meta name="description" content="Your call is booked. Here's what to expect next.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2732%27 fill=%27%231a9988%27/%3E%3Cg transform=%27translate(18,12)%27%3E%3Crect x=%270%27 y=%2713%27 width=%274%27 height=%2716%27 rx=%272%27 transform=%27rotate(-18,2,21)%27 fill=%27white%27 opacity=%27.3%27/%3E%3Crect x=%278%27 y=%277%27 width=%275%27 height=%2724%27 rx=%272.5%27 transform=%27rotate(-18,10.5,19)%27 fill=%27white%27 opacity=%27.5%27/%3E%3Crect x=%2718%27 y=%272%27 width=%276.5%27 height=%2732%27 rx=%273.25%27 transform=%27rotate(-18,21.25,18)%27 fill=%27white%27 opacity=%27.75%27/%3E%3Crect x=%2730%27 y=%270%27 width=%278%27 height=%2738%27 rx=%274%27 transform=%27rotate(-18,34,19)%27 fill=%27white%27/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--t:#1a9988;--td:#15826f;--n:#003576;--w:#fff;--bg:#f8f8f8;--tx:#111827;--gr:#374151;--mt:#6b7280;--ln:#e5e7eb}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--tx);background:var(--bg);min-height:100vh}
+a{text-decoration:none;color:inherit}
+
+.lnav{display:flex;align-items:center;justify-content:center;padding:14px 4%;background:var(--w);border-bottom:1px solid var(--ln)}
+.lnav svg{height:38px;width:auto}
+
+/* PROGRESS */
+.progress{display:flex;justify-content:center;gap:8px;padding:20px 4% 0;max-width:500px;margin:0 auto}
+.ps{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--t)}
+.ps .circ{width:24px;height:24px;border-radius:50%;background:var(--t);border:2px solid var(--t);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff}
+.pl{width:40px;height:2px;background:var(--t);align-self:center}
+
+/* HERO */
+.hero{padding:48px 4% 32px;text-align:center}
+.hero-in{max-width:600px;margin:0 auto}
+.check-circle{width:72px;height:72px;border-radius:50%;background:rgba(26,153,136,.08);border:2px solid rgba(26,153,136,.2);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:32px;color:var(--t)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,40px);font-weight:700;line-height:1.12;margin-bottom:12px}
+.hero h1 em{font-style:italic;color:var(--t)}
+.hero>div>p{font-size:16px;color:var(--mt);max-width:460px;margin:0 auto;line-height:1.7;font-weight:300}
+
+/* WHAT'S NEXT */
+.next{padding:40px 4% 48px}
+.next-card{max-width:700px;margin:0 auto;background:var(--w);border:1px solid var(--ln);border-radius:20px;padding:36px 32px;box-shadow:0 8px 40px rgba(0,0,0,.04)}
+.next-card h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;text-align:center;margin-bottom:8px}
+.next-card>p{font-size:14px;color:var(--mt);text-align:center;margin-bottom:28px;font-weight:300}
+.next-steps{display:flex;flex-direction:column;gap:16px}
+.ns{display:flex;gap:16px;align-items:flex-start;padding:18px 20px;border:1px solid var(--ln);border-radius:12px}
+.ns .num{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:rgba(0,53,118,.06);color:var(--n);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700}
+.ns h4{font-size:15px;font-weight:600;margin-bottom:2px}
+.ns p{font-size:13px;color:var(--mt);line-height:1.6;font-weight:300}
+
+/* TIPS */
+.tips{padding:0 4% 48px}
+.tips-card{max-width:700px;margin:0 auto;padding:28px 28px;border:1px solid rgba(26,153,136,.15);border-radius:16px;background:linear-gradient(135deg,rgba(26,153,136,.02),rgba(0,53,118,.02))}
+.tips-card h3{font-size:16px;font-weight:600;margin-bottom:14px;text-align:center}
+.tips-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.tip{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--gr);line-height:1.5}
+.tip .ck{flex-shrink:0;width:20px;height:20px;border-radius:5px;background:rgba(26,153,136,.08);color:var(--t);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;margin-top:1px}
+
+/* REVIEW */
+.rev-single{padding:0 4% 48px}
+.rev-card{max-width:600px;margin:0 auto;background:var(--w);border:1px solid var(--ln);border-radius:14px;padding:28px 24px;text-align:center}
+.rev-card .stars{color:#d4a017;font-size:14px;letter-spacing:2px;margin-bottom:10px}
+.rev-card blockquote{font-size:15px;color:var(--gr);line-height:1.75;font-style:italic;font-weight:300;margin-bottom:12px}
+.rev-card cite{font-size:13px;color:var(--mt);font-style:normal;font-weight:500}
+
+/* CTA */
+.bottom-cta{padding:40px 4% 48px;text-align:center}
+.bottom-cta p{font-size:15px;color:var(--mt);margin-bottom:16px;font-weight:300}
+.bottom-cta a{display:inline-block;background:var(--n);color:#fff;font-size:14px;font-weight:600;padding:12px 28px;border-radius:10px;transition:.2s;margin:0 6px}
+.bottom-cta a:hover{background:#002a5e;transform:translateY(-2px)}
+.bottom-cta a.sec{background:transparent;border:1px solid var(--ln);color:var(--gr)}
+.bottom-cta a.sec:hover{border-color:var(--t);color:var(--t);background:transparent}
+
+.lft{padding:24px 4%;text-align:center;border-top:1px solid var(--ln);background:var(--bg)}
+.lft p{font-size:12px;color:var(--mt)}
+.lft a{color:var(--mt)}
+.lft a:hover{color:var(--t)}
+
+@media(max-width:600px){
+  .next-card{padding:24px 20px}
+  .tips-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="lnav">
+  <a href="index.html">
+    <svg width="220" height="38" viewBox="0 0 420 70"><g transform="translate(4,10)"><rect x="0" y="16" width="5" height="20" rx="2.5" transform="rotate(-18,2.5,26)" fill="#1a9988" opacity=".2"/><rect x="10" y="9" width="6.5" height="30" rx="3.25" transform="rotate(-18,13.25,24)" fill="#1a9988" opacity=".4"/><rect x="23" y="3" width="8" height="40" rx="4" transform="rotate(-18,27,23)" fill="#1a9988" opacity=".65"/><rect x="38" y="0" width="10" height="48" rx="5" transform="rotate(-18,43,24)" fill="#1a9988"/></g><text x="56" y="45" font-family="DM Sans,sans-serif" font-size="32" letter-spacing="1.5"><tspan font-weight="700" fill="#111">Wyn Group </tspan><tspan font-weight="300" fill="#aaa">Inc</tspan></text></svg>
+  </a>
+</div>
+
+<!-- PROGRESS - ALL DONE -->
+<div class="progress">
+  <div class="ps"><span class="circ">&#10003;</span> Form</div>
+  <div class="pl"></div>
+  <div class="ps"><span class="circ">&#10003;</span> Schedule</div>
+  <div class="pl"></div>
+  <div class="ps"><span class="circ">&#10003;</span> Go Live</div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-in">
+    <div class="check-circle">&#10003;</div>
+    <h1>You're <em>All Set</em></h1>
+    <p>Your call is booked. Check your email for the confirmation and calendar invite. Here's what happens next.</p>
+  </div>
+</section>
+
+<!-- WHAT'S NEXT -->
+<section class="next">
+  <div class="next-card">
+    <h2>What Happens Next</h2>
+    <p>Three simple steps between now and your first roofing leads.</p>
+    <div class="next-steps">
+      <div class="ns"><div class="num">1</div><div><h4>Check Your Email</h4><p>You'll receive a calendar invite with the call details and a link to join. Add it to your calendar so you don't miss it.</p></div></div>
+      <div class="ns"><div class="num">2</div><div><h4>We'll Call You at Your Scheduled Time</h4><p>A roofing lead strategist will confirm your territory, set your filters (storm, replacement, repair), and connect your CRM — all in 15 minutes.</p></div></div>
+      <div class="ns"><div class="num">3</div><div><h4>Leads Start Flowing</h4><p>Most roofers receive their first exclusive homeowner estimates the same day or next morning after the call. No waiting around.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="tips">
+  <div class="tips-card">
+    <h3>&#128161; Come Prepared to Get the Most Out of Your Call</h3>
+    <div class="tips-grid">
+      <div class="tip"><span class="ck">&#10003;</span> Know your service area (zip codes or mile radius)</div>
+      <div class="tip"><span class="ck">&#10003;</span> Know what job types you want (storm, replacement, repair)</div>
+      <div class="tip"><span class="ck">&#10003;</span> Have your CRM login handy (JobNimbus, AccuLynx, etc.)</div>
+      <div class="tip"><span class="ck">&#10003;</span> Know how many leads per week you can handle</div>
+    </div>
+  </div>
+</section>
+
+<!-- SINGLE REVIEW -->
+<section class="rev-single">
+  <div class="rev-card">
+    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <blockquote>"I booked the call on a Monday, my portal was live by Tuesday, and I signed 4 roofing jobs that first week. Best business decision I made all year."</blockquote>
+    <cite>&mdash; Mike J., Owner, Peak Roofing Co.</cite>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <p>While you wait for your call, take a look around.</p>
+  <a href="index.html">Visit Our Website</a>
+  <a href="roofing.html" class="sec">Learn More About Roofing Leads</a>
+</section>
+
+<footer class="lft">
+  <p>&copy; 2026 Wyn Group Inc. &middot; <a href="index.html">Home</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
+
+</body>
+</html>

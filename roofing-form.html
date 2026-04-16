@@ -211,7 +211,7 @@ a{text-decoration:none;color:inherit}
         <div class="bar bar-lg" style="margin-top:20px"></div>
       </div>
     </div>
-    <div id="formWrap" style="overflow:hidden;max-height:350px;transition:max-height .3s">
+    <div id="formWrap" style="overflow:hidden;max-height:700px;transition:max-height .3s">
     <iframe
       src="https://api.leadconnectorhq.com/widget/survey/3v3gpZqeigQjyBoeiszg"
       style="border:none;width:100%;opacity:0;transition:opacity .4s"
@@ -228,7 +228,7 @@ a{text-decoration:none;color:inherit}
       try{
         var d=typeof e.data==='string'?JSON.parse(e.data):e.data;
         if(d&&d.scrollHeight){
-          if(d.scrollHeight>350){
+          if(d.scrollHeight>700){
             document.getElementById('formWrap').style.maxHeight=d.scrollHeight+'px';
           }
           // Smooth scroll to form top on every step change

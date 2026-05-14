@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You're All Set — Wyn Group Inc</title>
+<meta name="description" content="Your call is booked. Here's what happens next.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2732%27 fill=%27%231a9988%27/%3E%3Cg transform=%27translate(18,12)%27%3E%3Crect x=%270%27 y=%2713%27 width=%274%27 height=%2716%27 rx=%272%27 transform=%27rotate(-18,2,21)%27 fill=%27white%27 opacity=%27.3%27/%3E%3Crect x=%278%27 y=%277%27 width=%275%27 height=%2724%27 rx=%272.5%27 transform=%27rotate(-18,10.5,19)%27 fill=%27white%27 opacity=%27.5%27/%3E%3Crect x=%2718%27 y=%272%27 width=%276.5%27 height=%2732%27 rx=%273.25%27 transform=%27rotate(-18,21.25,18)%27 fill=%27white%27 opacity=%27.75%27/%3E%3Crect x=%2730%27 y=%270%27 width=%278%27 height=%2738%27 rx=%274%27 transform=%27rotate(-18,34,19)%27 fill=%27white%27/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--t:#1a9988;--td:#15826f;--n:#003576;--w:#fff;--bg:#f8f8f8;--tx:#111827;--gr:#374151;--mt:#6b7280;--ln:#e5e7eb}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--tx);background:var(--bg);min-height:100vh}
+a{text-decoration:none;color:inherit}
+
+.lnav{display:flex;align-items:center;justify-content:center;padding:14px 4%;background:var(--w);border-bottom:1px solid var(--ln)}
+.lnav svg{height:38px;width:auto}
+
+/* PROGRESS */
+.progress{display:flex;justify-content:center;gap:8px;padding:20px 4% 0;max-width:500px;margin:0 auto}
+.ps{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--t)}
+.ps .circ{width:24px;height:24px;border-radius:50%;background:var(--t);border:2px solid var(--t);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff}
+.pl{width:40px;height:2px;background:var(--t);align-self:center}
+
+/* HERO */
+.hero{padding:56px 4% 40px;text-align:center;background:radial-gradient(ellipse 60% 50% at 50% 30%,rgba(26,153,136,.06),transparent 55%),linear-gradient(to bottom,#fff,#f7fbfa,var(--bg))}
+.hero-in{max-width:600px;margin:0 auto}
+.check-icon{width:72px;height:72px;border-radius:50%;background:rgba(26,153,136,.08);border:2px solid rgba(26,153,136,.2);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:32px;color:var(--t)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,40px);font-weight:700;line-height:1.12;margin-bottom:12px}
+.hero h1 em{font-style:italic;color:var(--t)}
+.hero p{font-size:16px;color:var(--mt);max-width:460px;margin:0 auto;line-height:1.7;font-weight:300}
+
+/* WHAT'S NEXT */
+.next{padding:48px 4%;background:var(--w)}
+.next-in{max-width:700px;margin:0 auto}
+.next h2{font-family:'Playfair Display',serif;font-size:clamp(22px,2.5vw,28px);font-weight:600;text-align:center;margin-bottom:8px}
+.next>p{font-size:14px;color:var(--mt);text-align:center;margin-bottom:28px;font-weight:300}
+.next-steps{display:flex;flex-direction:column;gap:12px}
+.ns{display:flex;gap:14px;padding:20px 22px;border:1px solid var(--ln);border-radius:12px;align-items:flex-start;background:var(--w)}
+.ns .num{flex-shrink:0;width:36px;height:36px;border-radius:10px;background:rgba(0,53,118,.05);color:var(--n);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:16px;font-weight:700}
+.ns h4{font-size:15px;font-weight:600;margin-bottom:2px}
+.ns p{font-size:13px;color:var(--mt);line-height:1.6;font-weight:300}
+
+/* PREPARE */
+.prepare{padding:48px 4%;background:var(--bg)}
+.prepare-in{max-width:700px;margin:0 auto}
+.prepare h2{font-family:'Playfair Display',serif;font-size:clamp(20px,2.5vw,26px);font-weight:600;text-align:center;margin-bottom:24px}
+.prep-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.prep{padding:20px 18px;border:1px solid var(--ln);border-radius:10px;background:var(--w)}
+.prep .ico{font-size:20px;margin-bottom:8px}
+.prep h4{font-size:14px;font-weight:600;margin-bottom:3px}
+.prep p{font-size:12px;color:var(--mt);line-height:1.55;font-weight:300}
+
+/* QUOTE */
+.quote{padding:48px 4%;background:var(--w)}
+.quote-in{max-width:600px;margin:0 auto;text-align:center;padding:32px 28px;border:1px solid var(--ln);border-radius:16px}
+.quote-in .stars{color:#d4a017;font-size:14px;letter-spacing:2px;margin-bottom:12px}
+.quote-in blockquote{font-size:15px;color:var(--gr);line-height:1.75;font-style:italic;font-weight:300;margin-bottom:10px}
+.quote-in cite{font-size:12px;color:var(--mt);font-style:normal;font-weight:500}
+
+/* FOOTER CTA */
+.foot-cta{padding:40px 4%;text-align:center;background:linear-gradient(135deg,var(--n),#012a5c,#0a1628);position:relative;overflow:hidden}
+.foot-cta::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:250px;border-radius:50%;background:radial-gradient(ellipse,rgba(26,153,136,.12),transparent 65%);pointer-events:none}
+.foot-cta-in{position:relative;z-index:2}
+.foot-cta h3{font-family:'Playfair Display',serif;font-size:clamp(18px,2vw,24px);font-weight:600;color:#fff;margin-bottom:8px}
+.foot-cta p{color:rgba(255,255,255,.4);font-size:14px;max-width:400px;margin:0 auto 20px;line-height:1.6;font-weight:300}
+.foot-cta a{display:inline-block;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);font-size:14px;font-weight:500;padding:12px 28px;border-radius:10px;transition:.3s}
+.foot-cta a:hover{border-color:rgba(255,255,255,.5);color:#fff}
+
+.lft{padding:24px 4%;text-align:center;border-top:1px solid var(--ln);background:var(--bg)}
+.lft p{font-size:12px;color:var(--mt)}
+.lft a{color:var(--mt)}
+.lft a:hover{color:var(--t)}
+
+@media(max-width:768px){
+  .prep-grid{grid-template-columns:1fr}
+}
+</style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1315531100000095');
+fbq('track', 'PageView');
+fbq('track', 'Lead');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1315531100000095&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+
+<!-- NAV -->
+<div class="lnav">
+  <a href="index.html">
+    <svg width="220" height="38" viewBox="0 0 420 70"><g transform="translate(4,10)"><rect x="0" y="16" width="5" height="20" rx="2.5" transform="rotate(-18,2.5,26)" fill="#1a9988" opacity=".2"/><rect x="10" y="9" width="6.5" height="30" rx="3.25" transform="rotate(-18,13.25,24)" fill="#1a9988" opacity=".4"/><rect x="23" y="3" width="8" height="40" rx="4" transform="rotate(-18,27,23)" fill="#1a9988" opacity=".65"/><rect x="38" y="0" width="10" height="48" rx="5" transform="rotate(-18,43,24)" fill="#1a9988"/></g><text x="56" y="45" font-family="DM Sans,sans-serif" font-size="32" letter-spacing="1.5"><tspan font-weight="700" fill="#111">Wyn Group </tspan><tspan font-weight="300" fill="#aaa">Inc</tspan></text></svg>
+  </a>
+</div>
+
+<!-- PROGRESS - ALL COMPLETE -->
+<div class="progress">
+  <div class="ps"><span class="circ">&#10003;</span> Form</div>
+  <div class="pl"></div>
+  <div class="ps"><span class="circ">&#10003;</span> Schedule</div>
+  <div class="pl"></div>
+  <div class="ps"><span class="circ">&#10003;</span> Go Live</div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-in">
+    <div class="check-icon">&#10003;</div>
+    <h1>You're <em>All Set</em></h1>
+    <p>Your call is booked. Check your email for the confirmation and calendar invite. Here's what happens next.</p>
+  </div>
+</section>
+
+<!-- WHAT'S NEXT -->
+<section class="next">
+  <div class="next-in">
+    <h2>What Happens From Here</h2>
+    <p>Three steps between now and your first roofing leads.</p>
+    <div class="next-steps">
+      <div class="ns"><div class="num">1</div><div><h4>Check Your Email</h4><p>You'll receive a confirmation email with your call details and a calendar invite. Add it to your calendar so you don't miss it.</p></div></div>
+      <div class="ns"><div class="num">2</div><div><h4>We Prep Your Territory</h4><p>Before the call, our team reviews your service area, checks availability, and pre-builds your portal so we can go live as fast as possible.</p></div></div>
+      <div class="ns"><div class="num">3</div><div><h4>Call Day = Launch Day</h4><p>On the call we'll confirm your filters, connect your CRM, and flip the switch. Most roofers receive their first homeowner estimates the same day.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PREPARE FOR THE CALL -->
+<section class="prepare">
+  <div class="prepare-in">
+    <h2>To Get the Most Out of Your Call</h2>
+    <div class="prep-grid">
+      <div class="prep"><div class="ico">&#128205;</div><h4>Know Your Service Area</h4><p>Have your zip codes or radius ready — we'll lock in your exclusive territory on the call.</p></div>
+      <div class="prep"><div class="ico">&#127968;</div><h4>Job Types You Want</h4><p>Storm damage, full replacement, repair, insurance claims — know what kinds of roofing jobs you want to focus on.</p></div>
+      <div class="prep"><div class="ico">&#128202;</div><h4>Your Weekly Volume</h4><p>How many estimates can your team handle per week? Start small and scale, or go big from day one.</p></div>
+      <div class="prep"><div class="ico">&#128279;</div><h4>CRM Access</h4><p>If you use JobNimbus, AccuLynx, Salesforce, or another CRM — have your login handy so we can connect it live.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="quote">
+  <div class="quote-in">
+    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <blockquote>"I booked the call on Monday. By Wednesday I had my portal live, my JobNimbus connected, and 12 homeowner requests in my pipeline. Signed 4 jobs that first week."</blockquote>
+    <cite>&mdash; Mike J., Owner, Peak Roofing Co.</cite>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="foot-cta">
+  <div class="foot-cta-in">
+    <h3>While You Wait &mdash; See What We Deliver</h3>
+    <p>Learn more about our storm-verified, exclusive roofing leads and what makes Wyn Group different.</p>
+    <a href="roofing.html">Explore Roofing Leads &rarr;</a>
+  </div>
+</section>
+
+<footer class="lft">
+  <p>&copy; 2026 Wyn Group Inc. &middot; <a href="index.html">Home</a> &middot; <a href="roofing.html">Roofing Leads</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
+
+</body>
+</html>

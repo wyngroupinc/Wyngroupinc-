@@ -11,78 +11,98 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--t:#1a9988;--td:#15826f;--n:#003576;--w:#fff;--bg:#f8f8f8;--tx:#111827;--gr:#374151;--mt:#6b7280;--ln:#e5e7eb}
-body{font-family:'DM Sans',sans-serif;color:var(--tx);background:var(--w)}
+body{font-family:'DM Sans',sans-serif;color:var(--tx);background:var(--bg)}
 a{text-decoration:none;color:inherit}
 
+/* Top bar */
+.top-bar{background:var(--n);color:#fff;text-align:center;padding:10px 16px;font-size:13px;font-weight:500}
+.top-bar strong{color:#5ce0d0}
+
+/* Nav */
 .lnav{display:flex;align-items:center;justify-content:space-between;padding:14px 4%;border-bottom:1px solid var(--ln);background:var(--w)}
 .lnav svg{height:38px;width:auto}
-.lnav span{font-size:12px;color:var(--mt);font-weight:500}
+.lnav a{font-size:13px;color:var(--mt);font-weight:500}
+.lnav a:hover{color:var(--t)}
 
 /* Hero */
-.sch-hero{padding:36px 4% 24px;text-align:center;background:linear-gradient(to bottom,#fff,var(--bg))}
-.sch-hero h1{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,38px);font-weight:700;line-height:1.15;margin-bottom:8px}
-.sch-hero h1 em{color:var(--t);font-style:normal}
-.sch-hero p{font-size:15px;color:var(--gr);line-height:1.7;font-weight:300;max-width:500px;margin:0 auto}
+.sch-hero{padding:36px 4% 12px;text-align:center;background:var(--w)}
+.sch-hero .step-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t);margin-bottom:12px}
+.sch-hero h1{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,38px);font-weight:700;line-height:1.15;margin-bottom:10px}
+.sch-hero h1 em{color:var(--t);font-style:italic}
+.sch-hero>p{font-size:15px;color:var(--gr);line-height:1.7;font-weight:300;max-width:520px;margin:0 auto 24px}
 
-/* Calendar — full width, no scroll */
-.cal-section{padding:16px 2% 0;background:var(--bg)}
-.cal-wrap{max-width:100%;margin:0 auto}
-.cal-wrap iframe{width:100%;height:1200px;border:none;border-radius:0;background:var(--w);overflow:hidden}
+/* Calendar card */
+.cal-section{padding:0 4% 20px;background:var(--w)}
+.cal-card{max-width:680px;margin:0 auto;background:var(--w);border:1px solid var(--ln);border-radius:20px;box-shadow:0 8px 40px rgba(0,0,0,.08);overflow:hidden;padding:32px 28px 0}
+.cal-card h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;text-align:center;margin-bottom:4px}
+.cal-card .cal-sub{font-size:14px;color:var(--mt);text-align:center;font-weight:300;margin-bottom:20px}
+.cal-card iframe{width:100%;height:900px;border:none;display:block}
+
+/* Trust pills below calendar */
+.trust-pills{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;padding:20px 4% 8px;background:var(--w);max-width:700px;margin:0 auto}
+.tp{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:var(--gr)}
+.tp span{color:var(--t)}
 
 /* Fallback */
-.fb{text-align:center;padding:20px 4% 0;max-width:500px;margin:0 auto}
+.fb{text-align:center;padding:16px 4% 32px;max-width:500px;margin:0 auto;background:var(--w)}
 .fb p{font-size:14px;color:var(--mt);font-weight:300;line-height:1.6}
 .fb strong{color:var(--tx);font-weight:600}
 
 /* Urgency bar */
-.urgency{padding:32px 4%;text-align:center;background:var(--bg)}
-.urgency-in{max-width:700px;margin:0 auto;padding:20px 28px;background:linear-gradient(135deg,rgba(26,153,136,.04),rgba(0,53,118,.04));border:1px solid rgba(26,153,136,.15);border-radius:12px}
+.urgency{padding:0 4% 32px;background:var(--w)}
+.urgency-in{max-width:700px;margin:0 auto;padding:16px 24px;background:linear-gradient(135deg,rgba(26,153,136,.04),rgba(0,53,118,.04));border:1px solid rgba(26,153,136,.15);border-radius:12px;text-align:center}
 .urgency-in p{font-size:14px;color:var(--gr);line-height:1.7;font-weight:300}
 .urgency-in strong{color:var(--tx);font-weight:600}
 
-/* Trust grid */
-.trust-section{padding:40px 4%;background:var(--w)}
-.trust-in{max-width:800px;margin:0 auto}
-.trust-in h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;text-align:center;margin-bottom:24px;color:var(--n)}
-.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.tc{text-align:center;padding:24px 16px;border:1px solid var(--ln);border-radius:12px;background:var(--bg)}
-.tc .ico{font-size:28px;margin-bottom:10px}
-.tc h4{font-size:14px;font-weight:600;margin-bottom:4px}
-.tc p{font-size:12px;color:var(--mt);line-height:1.6;font-weight:300}
+/* Sections shared */
+.section-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;text-align:center;margin-bottom:8px;color:var(--n)}
+.section-sub{text-align:center;color:var(--mt);font-size:14px;max-width:500px;margin:0 auto 24px;line-height:1.7;font-weight:300}
 
-/* What happens next */
-.next{padding:40px 4%;background:var(--bg)}
+/* What happens on call */
+.call-section{padding:40px 4%;background:var(--bg)}
+.call-in{max-width:800px;margin:0 auto}
+.call-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.cc{display:flex;gap:14px;align-items:flex-start;padding:20px;background:var(--w);border:1px solid var(--ln);border-radius:12px}
+.cc .ico{width:36px;height:36px;border-radius:10px;background:rgba(26,153,136,.08);color:var(--t);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.cc h4{font-size:14px;font-weight:600;margin-bottom:3px}
+.cc p{font-size:12px;color:var(--mt);line-height:1.6;font-weight:300}
+
+/* After the call steps */
+.next{padding:40px 4%;background:var(--w)}
 .next-in{max-width:700px;margin:0 auto}
-.next-in h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;text-align:center;margin-bottom:24px;color:var(--n)}
-.steps{display:flex;flex-direction:column;gap:16px}
-.step{display:flex;gap:16px;align-items:flex-start;padding:20px 24px;background:var(--w);border:1px solid var(--ln);border-radius:12px}
+.steps{display:flex;flex-direction:column;gap:14px}
+.step{display:flex;gap:16px;align-items:flex-start;padding:20px 24px;background:var(--bg);border:1px solid var(--ln);border-radius:12px}
 .step .sn{width:36px;height:36px;border-radius:50%;background:var(--t);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0}
 .step h4{font-size:14px;font-weight:600;margin-bottom:3px}
 .step p{font-size:13px;color:var(--mt);line-height:1.6;font-weight:300}
 
-/* Social proof */
-.sp{padding:40px 4%;background:var(--w);border-top:1px solid var(--ln)}
+/* Social proof numbers */
+.sp{padding:40px 4%;background:var(--bg)}
 .sp-in{max-width:700px;margin:0 auto;text-align:center}
-.sp-in h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;margin-bottom:20px;color:var(--n)}
 .sp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.sp-card{padding:20px 16px;background:var(--bg);border-radius:12px;border:1px solid var(--ln)}
+.sp-card{padding:20px 16px;background:var(--w);border-radius:12px;border:1px solid var(--ln)}
 .sp-card .num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--t)}
 .sp-card p{font-size:11px;color:var(--mt);text-transform:uppercase;letter-spacing:1.5px;font-weight:600;margin-top:2px}
 
 /* Final CTA */
-.final-cta{padding:40px 4%;text-align:center;background:linear-gradient(135deg,var(--n),#012a5c);position:relative;overflow:hidden}
+.final-cta{padding:48px 4%;text-align:center;background:linear-gradient(135deg,var(--n),#012a5c);position:relative;overflow:hidden}
 .final-cta::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:250px;border-radius:50%;background:radial-gradient(ellipse,rgba(26,153,136,.15),transparent 65%);pointer-events:none}
 .final-cta .pat{position:absolute;inset:0;opacity:.03;background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
-.final-cta p{position:relative;z-index:2;font-size:16px;color:rgba(255,255,255,.7);max-width:500px;margin:0 auto;line-height:1.7;font-weight:300}
-.final-cta strong{color:#fff;font-weight:600}
+.final-cta h2{position:relative;z-index:2;font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,30px);font-weight:700;color:#fff;margin-bottom:8px}
+.final-cta p{position:relative;z-index:2;font-size:14px;color:rgba(255,255,255,.55);max-width:480px;margin:0 auto 20px;line-height:1.7;font-weight:300}
+.final-cta .btn{position:relative;z-index:2;display:inline-block;background:var(--t);color:#fff;font-size:16px;font-weight:700;padding:16px 36px;border-radius:12px;box-shadow:0 6px 24px rgba(26,153,136,.3);transition:.3s}
+.final-cta .btn:hover{background:var(--td);transform:translateY(-2px)}
 
 .lft{padding:24px 4%;text-align:center;background:var(--bg);border-top:1px solid var(--ln)}
 .lft p{font-size:12px;color:var(--mt)}
+.lft a{color:var(--mt)}.lft a:hover{color:var(--t)}
 
 @media(max-width:768px){
-.tg,.sp-grid{grid-template-columns:1fr}
+.call-grid,.sp-grid{grid-template-columns:1fr}
 .sch-hero h1{font-size:26px}
-.cal-wrap iframe{height:1000px}
+.cal-card{border-radius:14px;padding:24px 16px 0;margin:0 -2%}
+.cal-card iframe{height:800px}
+.trust-pills{gap:10px}
 }
 </style>
 <!-- Meta Pixel Code -->
@@ -91,21 +111,36 @@ a{text-decoration:none;color:inherit}
 </head>
 <body>
 
+<div class="top-bar"><strong>Almost there:</strong> Book your call now to lock in your territory before another roofer claims it.</div>
+
 <div class="lnav">
 <svg width="220" height="38" viewBox="0 0 420 70"><g transform="translate(4,10)"><rect x="0" y="16" width="5" height="20" rx="2.5" transform="rotate(-18,2.5,26)" fill="#1a9988" opacity=".2"/><rect x="10" y="9" width="6.5" height="30" rx="3.25" transform="rotate(-18,13.25,24)" fill="#1a9988" opacity=".4"/><rect x="23" y="3" width="8" height="40" rx="4" transform="rotate(-18,27,23)" fill="#1a9988" opacity=".65"/><rect x="38" y="0" width="10" height="48" rx="5" transform="rotate(-18,43,24)" fill="#1a9988"/></g><text x="56" y="45" font-family="DM Sans,sans-serif" font-size="32" letter-spacing="1.5"><tspan font-weight="700" fill="#111">Wyn Group </tspan><tspan font-weight="300" fill="#aaa">Inc</tspan></text></svg>
-<span>Step 2 of 3</span>
+<a href="free-trial.html">&larr; Back</a>
 </div>
 
+<!-- Hero -->
 <section class="sch-hero">
+<div class="step-badge">&#9989; Step 2 of 3</div>
 <h1>Book Your <em>60-Second</em> Activation Call</h1>
 <p>Pick a time below. We'll confirm your area is available and activate your 5 free leads on the call.</p>
 </section>
 
+<!-- Calendar Card -->
 <section class="cal-section">
-<div class="cal-wrap">
+<div class="cal-card">
+<h2>Pick a Time</h2>
+<p class="cal-sub">60-second activation call &middot; No obligation</p>
 <iframe src="https://api.leadconnectorhq.com/widget/booking/WNdY9lLeI0vOqo0vqBrC" id="ghl-cal"></iframe>
 </div>
 </section>
+
+<!-- Trust pills -->
+<div class="trust-pills">
+<div class="tp"><span>&#10003;</span> No obligation</div>
+<div class="tp"><span>&#10003;</span> 60 seconds</div>
+<div class="tp"><span>&#10003;</span> Live in 24hrs</div>
+<div class="tp"><span>&#10003;</span> No contracts</div>
+</div>
 
 <div class="fb"><p>Can't find a time that works? <strong>No worries &mdash; we'll call you within the hour.</strong> Keep your phone nearby.</p></div>
 
@@ -114,19 +149,21 @@ a{text-decoration:none;color:inherit}
 <p>&#9889; <strong>Spots fill fast.</strong> We only work with one contractor per area. If your zip codes get claimed by another roofer before your call, we won't be able to offer them to you. Booking now locks your spot in line.</p>
 </div></section>
 
-<!-- Trust grid -->
-<section class="trust-section"><div class="trust-in">
-<h3>What Happens on the Call</h3>
-<div class="tg">
-<div class="tc"><div class="ico">&#128205;</div><h4>Confirm Your Area</h4><p>We check that your service area is available and hasn't been claimed by another contractor.</p></div>
-<div class="tc"><div class="ico">&#128273;</div><h4>Lock In Your Territory</h4><p>Once confirmed, your area is exclusively yours. No other roofer receives leads in your zip codes.</p></div>
-<div class="tc"><div class="ico">&#128640;</div><h4>Activate Your Trial</h4><p>We turn on your 5 free leads. First lead can arrive as soon as the same day.</p></div>
+<!-- What happens on the call -->
+<section class="call-section"><div class="call-in">
+<h3 class="section-title">What Happens on the Call</h3>
+<p class="section-sub">15 minutes. No pitch. No pressure. Just a strategist setting up your account so roofing leads start flowing.</p>
+<div class="call-grid">
+<div class="cc"><div class="ico">&#128205;</div><div><h4>Confirm Your Area</h4><p>We confirm your service area and make sure no other roofer is receiving leads in your area. First come, first served.</p></div></div>
+<div class="cc"><div class="ico">&#128270;</div><div><h4>Set Your Filters</h4><p>Storm damage, full replacement, repair, insurance claims &mdash; you choose exactly what types of roofing jobs you want to receive.</p></div></div>
+<div class="cc"><div class="ico">&#128279;</div><div><h4>Connect Your CRM</h4><p>JobNimbus, AccuLynx, Salesforce, HubSpot, or any CRM that accepts API or Zapier. Leads flow directly into your pipeline.</p></div></div>
+<div class="cc"><div class="ico">&#128640;</div><div><h4>Leads Start Flowing</h4><p>Most roofers get their first homeowner estimates the same day or next morning. No 2-week setup. No waiting around.</p></div></div>
 </div>
 </div></section>
 
-<!-- What happens next -->
+<!-- After the call -->
 <section class="next"><div class="next-in">
-<h3>After the Call</h3>
+<h3 class="section-title">After the Call</h3>
 <div class="steps">
 <div class="step"><div class="sn">1</div><div><h4>Portal access emailed to you</h4><p>You'll get a login to your lead portal where you can track every lead, view homeowner details, and manage your account.</p></div></div>
 <div class="step"><div class="sn">2</div><div><h4>5 exclusive leads delivered to your phone</h4><p>Over the next 7-10 days, verified homeowners in your area who need roof work will be sent directly to you via text and email. Nobody else gets them.</p></div></div>
@@ -136,7 +173,7 @@ a{text-decoration:none;color:inherit}
 
 <!-- Social proof numbers -->
 <section class="sp"><div class="sp-in">
-<h3>Contractors Who Took the Call</h3>
+<h3 class="section-title">Contractors Who Took the Call</h3>
 <div class="sp-grid">
 <div class="sp-card"><div class="num">80%+</div><p>Trial-to-paid conversion</p></div>
 <div class="sp-card"><div class="num">65%</div><p>First-call contact rate</p></div>
@@ -147,29 +184,36 @@ a{text-decoration:none;color:inherit}
 <!-- Final CTA -->
 <section class="final-cta">
 <div class="pat"></div>
-<p><strong>Your card won't be charged during the trial.</strong> Book 2 inspections from your 5 free leads or owe nothing. Scroll up and pick a time &mdash; this call takes 60 seconds.</p>
+<h2>Every Day You Don't Book Is a Day Another Roofer Takes Your Territory</h2>
+<p>We only work with one roofing company per area. Once it's claimed, it's gone. Pick a time above and lock it in.</p>
+<a href="#ghl-cal" class="btn">&#9757; Book Your Call Now</a>
 </section>
 
-<footer class="lft"><p>&copy; 2026 Wyn Group Inc.</p></footer>
+<footer class="lft"><p>&copy; 2026 Wyn Group Inc. &middot; <a href="index.html">Home</a> &middot; <a href="roofing.html">Roofing Leads</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p></footer>
 
 <script>
+// Auto-resize GHL calendar iframe to fit content without scrolling
 var cal=document.getElementById('ghl-cal');
-// Listen for GHL resize messages
+var targetHeight=1000;
+
+// Set initial height
+cal.style.height=targetHeight+'px';
+
+// Listen for GHL postMessage resize events
 window.addEventListener('message',function(e){
-  if(e.data&&e.data.type==='resize'&&e.data.height){
-    cal.style.height=Math.max(e.data.height,800)+'px';
-  }
-  // Some GHL widgets send height differently
-  if(typeof e.data==='string'&&e.data.indexOf('height')>-1){
-    try{var d=JSON.parse(e.data);if(d.height)cal.style.height=Math.max(d.height,800)+'px'}catch(x){}
+  if(e.data){
+    if(e.data.type==='resize'&&e.data.height){cal.style.height=Math.max(e.data.height+40,800)+'px'}
+    if(typeof e.data==='string'){try{var d=JSON.parse(e.data);if(d.height)cal.style.height=Math.max(d.height+40,800)+'px'}catch(x){}}
   }
 });
-// Fallback: poll iframe height every 500ms
+
+// Poll iframe content height every 500ms as fallback
 setInterval(function(){
   try{
     var h=cal.contentWindow.document.body.scrollHeight;
-    if(h>400)cal.style.height=h+'px';
+    if(h>400)cal.style.height=(h+40)+'px';
   }catch(e){}
 },500);
 </script>
+
 </body></html>

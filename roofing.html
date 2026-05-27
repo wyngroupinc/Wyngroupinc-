@@ -137,6 +137,18 @@
 
 <div class="ticker" id="ticker"><div class="ti" id="ticker-av"></div><div class="tt" id="ticker-text"></div></div>
 <script>
-(function(){var msgs=[{n:"A roofing contractor",m:"just claimed their 5 free leads"},{n:"A roofer",m:"just booked 3 inspections from trial leads"},{n:"A contractor",m:"just started their free trial"},{n:"A roofing company",m:"just went from trial to paid buyer"},{n:"A storm contractor",m:"just locked in their area"}];var el=document.getElementById('ticker'),txt=document.getElementById('ticker-text'),av=document.getElementById('ticker-av');var i=0;function getCity(){return fetch('https://ipapi.co/json/').then(function(r){return r.json()}).then(function(d){return d.city||'your area'}).catch(function(){return 'your area'})}getCity().then(function(city){function show(){var m=msgs[i%msgs.length];av.textContent=m.n.charAt(0);txt.innerHTML='<strong>'+m.n+' near '+city+'</strong><br><span>'+m.m+' — just now</span>';el.classList.add('show');setTimeout(function(){el.classList.remove('show')},4000);setTimeout(function(){i++;show()},5000)}setTimeout(show,3000)})})();
+(function(){var msgs=[
+{m:"just claimed their 5 free leads"},
+{m:"just booked 3 inspections from trial leads"},
+{m:"just started their free trial"},
+{m:"just went from trial to paid buyer"},
+{m:"just locked in their area"},
+{m:"just received their first lead"},
+{m:"just booked an inspection from a trial lead"},
+{m:"just signed up for exclusive leads"}
+];var el=document.getElementById('ticker'),txt=document.getElementById('ticker-text'),av=document.getElementById('ticker-av');var i=0;
+var names=['A roofing contractor','A roofer','A contractor','A roofing company','A storm restoration company','A local roofer'];
+function getLocation(){return fetch('https://ipapi.co/json/').then(function(r){return r.json()}).then(function(d){return{city:d.city||'',region:d.region_code||d.region||'',full:d.city&&d.region_code?d.city+', '+d.region_code:d.city||'your area'}}).catch(function(){return{city:'',region:'',full:'your area'}})}
+getLocation().then(function(loc){function show(){var m=msgs[i%msgs.length];var n=names[i%names.length];av.textContent=n.charAt(0);txt.innerHTML='<strong>'+n+' in '+loc.full+'</strong><br><span>'+m.m+' — just now</span>';el.classList.add('show');setTimeout(function(){el.classList.remove('show')},4000);setTimeout(function(){i++;show()},5000)}setTimeout(show,3000)})})();
 </script>
 </body></html>

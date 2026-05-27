@@ -24,10 +24,10 @@ a{text-decoration:none;color:inherit}
 .sch-hero h1 em{color:var(--t);font-style:normal}
 .sch-hero p{font-size:15px;color:var(--gr);line-height:1.7;font-weight:300;max-width:500px;margin:0 auto}
 
-/* Calendar — full width */
-.cal-section{padding:16px 4% 0;background:var(--bg)}
-.cal-wrap{max-width:900px;margin:0 auto}
-.cal-wrap iframe{width:100%;min-height:750px;border:none;border-radius:14px;background:var(--w);box-shadow:0 4px 32px rgba(0,0,0,.08)}
+/* Calendar — full width, no scroll */
+.cal-section{padding:16px 2% 0;background:var(--bg)}
+.cal-wrap{max-width:100%;margin:0 auto}
+.cal-wrap iframe{width:100%;height:1200px;border:none;border-radius:0;background:var(--w);overflow:hidden}
 
 /* Fallback */
 .fb{text-align:center;padding:20px 4% 0;max-width:500px;margin:0 auto}
@@ -82,7 +82,7 @@ a{text-decoration:none;color:inherit}
 @media(max-width:768px){
 .tg,.sp-grid{grid-template-columns:1fr}
 .sch-hero h1{font-size:26px}
-.cal-wrap iframe{min-height:650px}
+.cal-wrap iframe{height:1000px}
 }
 </style>
 <!-- Meta Pixel Code -->
@@ -154,7 +154,22 @@ a{text-decoration:none;color:inherit}
 
 <script>
 var cal=document.getElementById('ghl-cal');
-window.addEventListener('message',function(e){if(e.data&&e.data.type==='resize'&&e.data.height){cal.style.height=e.data.height+'px'}});
-try{var observer=new MutationObserver(function(){try{var h=cal.contentWindow.document.body.scrollHeight;if(h>400)cal.style.height=h+'px'}catch(e){}});cal.addEventListener('load',function(){try{observer.observe(cal.contentWindow.document.body,{childList:true,subtree:true,attributes:true})}catch(e){}})}catch(e){}
+// Listen for GHL resize messages
+window.addEventListener('message',function(e){
+  if(e.data&&e.data.type==='resize'&&e.data.height){
+    cal.style.height=Math.max(e.data.height,800)+'px';
+  }
+  // Some GHL widgets send height differently
+  if(typeof e.data==='string'&&e.data.indexOf('height')>-1){
+    try{var d=JSON.parse(e.data);if(d.height)cal.style.height=Math.max(d.height,800)+'px'}catch(x){}
+  }
+});
+// Fallback: poll iframe height every 500ms
+setInterval(function(){
+  try{
+    var h=cal.contentWindow.document.body.scrollHeight;
+    if(h>400)cal.style.height=h+'px';
+  }catch(e){}
+},500);
 </script>
 </body></html>

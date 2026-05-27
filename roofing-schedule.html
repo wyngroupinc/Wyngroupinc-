@@ -3,11 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Book Your Activation Call — Wyn Group Inc</title>
+<title>Set Up Your Account — Wyn Group Inc</title>
 <meta name="description" content="Book your quick activation call to confirm your area and start your 5 free roofing leads trial.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2732%27 fill=%27%231a9988%27/%3E%3Cg transform=%27translate(18,12)%27%3E%3Crect x=%270%27 y=%2713%27 width=%274%27 height=%2716%27 rx=%272%27 transform=%27rotate(-18,2,21)%27 fill=%27white%27 opacity=%27.3%27/%3E%3Crect x=%278%27 y=%277%27 width=%275%27 height=%2724%27 rx=%272.5%27 transform=%27rotate(-18,10.5,19)%27 fill=%27white%27 opacity=%27.5%27/%3E%3Crect x=%2718%27 y=%272%27 width=%276.5%27 height=%2732%27 rx=%273.25%27 transform=%27rotate(-18,21.25,18)%27 fill=%27white%27 opacity=%27.75%27/%3E%3Crect x=%2730%27 y=%270%27 width=%278%27 height=%2738%27 rx=%274%27 transform=%27rotate(-18,34,19)%27 fill=%27white%27/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://api.leadconnectorhq.com">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--t:#1a9988;--td:#15826f;--n:#003576;--w:#fff;--bg:#f8f8f8;--tx:#111827;--gr:#374151;--mt:#6b7280;--ln:#e5e7eb}
@@ -111,7 +113,7 @@ a{text-decoration:none;color:inherit}
 </head>
 <body>
 
-<div class="top-bar"><strong>Almost there:</strong> Book your call now to lock in your territory before another roofer claims it.</div>
+<div class="top-bar"><strong>&#9888;&#65039; Your area is available now</strong> — but we only work with one contractor per territory. Don't lose your spot.</div>
 
 <div class="lnav">
 <svg width="220" height="38" viewBox="0 0 420 70"><g transform="translate(4,10)"><rect x="0" y="16" width="5" height="20" rx="2.5" transform="rotate(-18,2.5,26)" fill="#1a9988" opacity=".2"/><rect x="10" y="9" width="6.5" height="30" rx="3.25" transform="rotate(-18,13.25,24)" fill="#1a9988" opacity=".4"/><rect x="23" y="3" width="8" height="40" rx="4" transform="rotate(-18,27,23)" fill="#1a9988" opacity=".65"/><rect x="38" y="0" width="10" height="48" rx="5" transform="rotate(-18,43,24)" fill="#1a9988"/></g><text x="56" y="45" font-family="DM Sans,sans-serif" font-size="32" letter-spacing="1.5"><tspan font-weight="700" fill="#111">Wyn Group </tspan><tspan font-weight="300" fill="#aaa">Inc</tspan></text></svg>
@@ -120,17 +122,24 @@ a{text-decoration:none;color:inherit}
 
 <!-- Hero -->
 <section class="sch-hero">
-<div class="step-badge">&#9989; Step 2 of 3</div>
-<h1>Book Your <span style="color:var(--t)">Quick Activation</span> Call</h1>
-<p>Pick a time below. We'll confirm your area is available and activate your 5 free leads on the call.</p>
+<div class="step-badge">&#9889; Step 2 of 3 — Almost Done</div>
+<h1>Last Step: <span style="color:var(--t)">Set Up Your Account</span></h1>
+<p>Pick a time below and we'll get your leads activated. Your area is available right now — but we can only hold it until another contractor claims it.</p>
 </section>
 
 <!-- Calendar Card -->
 <section class="cal-section">
 <div class="cal-card">
-<h2>Pick a Time</h2>
-<p class="cal-sub">Quick activation call &middot; No obligation</p>
-<iframe src="https://api.leadconnectorhq.com/widget/booking/WNdY9lLeI0vOqo0vqBrC" id="ghl-cal"></iframe>
+<h2>Pick a Time to Activate Your Leads</h2>
+<p class="cal-sub">Your area is confirmed &mdash; this is the last step before leads start flowing</p>
+<!-- Loading skeleton -->
+<div id="cal-loader" style="text-align:center;padding:60px 0">
+<div style="width:44px;height:44px;border:3px solid #e5e7eb;border-top-color:#1a9988;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 14px"></div>
+<p style="font-size:14px;color:#6b7280">Loading available times...</p>
+</div>
+<style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+<iframe src="about:blank" data-src="https://api.leadconnectorhq.com/widget/booking/WNdY9lLeI0vOqo0vqBrC" id="ghl-cal" style="opacity:0;transition:opacity .3s" onload="if(this.src!=='about:blank'){this.style.opacity='1';document.getElementById('cal-loader').style.display='none'}"></iframe>
+<script>var ci=document.getElementById('ghl-cal');requestAnimationFrame(function(){ci.src=ci.dataset.src})</script>
 </div>
 </section>
 
@@ -146,13 +155,13 @@ a{text-decoration:none;color:inherit}
 
 <!-- Urgency -->
 <section class="urgency"><div class="urgency-in">
-<p>&#9889; <strong>Spots fill fast.</strong> We only work with one contractor per area. If your zip codes get claimed by another roofer before your call, we won't be able to offer them to you. Booking now locks your spot in line.</p>
+<p>&#9888;&#65039; <strong>Your area won't stay open forever.</strong> We only activate one contractor per territory. Two other roofers near you have started the process. If they complete setup first, your area gets locked to them — not you.</p>
 </div></section>
 
 <!-- What happens on the call -->
 <section class="call-section"><div class="call-in">
-<h3 class="section-title">What Happens on the Call</h3>
-<p class="section-sub">15 minutes. No pitch. No pressure. Just a strategist setting up your account so roofing leads start flowing.</p>
+<h3 class="section-title">What Happens During Setup</h3>
+<p class="section-sub">A quick call to configure your account. No pitch. No pressure. Just getting your leads turned on.</p>
 <div class="call-grid">
 <div class="cc"><div class="ico">&#128205;</div><div><h4>Confirm Your Area</h4><p>We confirm your service area and make sure no other roofer is receiving leads in your area. First come, first served.</p></div></div>
 <div class="cc"><div class="ico">&#128270;</div><div><h4>Set Your Filters</h4><p>Storm damage, full replacement, repair, insurance claims &mdash; you choose exactly what types of roofing jobs you want to receive.</p></div></div>
@@ -163,7 +172,7 @@ a{text-decoration:none;color:inherit}
 
 <!-- After the call -->
 <section class="next"><div class="next-in">
-<h3 class="section-title">After the Call</h3>
+<h3 class="section-title">Once You're Activated</h3>
 <div class="steps">
 <div class="step"><div class="sn">1</div><div><h4>Portal access emailed to you</h4><p>You'll get a login to your lead portal where you can track every lead, view homeowner details, and manage your account.</p></div></div>
 <div class="step"><div class="sn">2</div><div><h4>5 exclusive leads delivered to your phone</h4><p>Over the next 7-10 days, verified homeowners in your area who need roof work will be sent directly to you via text and email. Nobody else gets them.</p></div></div>
@@ -173,7 +182,7 @@ a{text-decoration:none;color:inherit}
 
 <!-- Social proof numbers -->
 <section class="sp"><div class="sp-in">
-<h3 class="section-title">Contractors Who Took the Call</h3>
+<h3 class="section-title">Contractors Who Completed Setup</h3>
 <div class="sp-grid">
 <div class="sp-card"><div class="num">80%+</div><p>Trial-to-paid conversion</p></div>
 <div class="sp-card"><div class="num">65%</div><p>First-call contact rate</p></div>
@@ -184,9 +193,9 @@ a{text-decoration:none;color:inherit}
 <!-- Final CTA -->
 <section class="final-cta">
 <div class="pat"></div>
-<h2>Every Day You Don't Book Is a Day Another Roofer Takes Your Territory</h2>
-<p>We only work with one roofing company per area. Once it's claimed, it's gone. Pick a time above and lock it in.</p>
-<a href="#ghl-cal" class="btn">&#9757; Book Your Call Now</a>
+<h2>Your Competitor Is One Click Away From Taking Your Territory</h2>
+<p>We only activate one contractor per area. Once someone else completes setup, your zip codes are gone. Scroll up and pick a time now.</p>
+<a href="#ghl-cal" class="btn">&#9757; Complete My Setup</a>
 </section>
 
 <footer class="lft"><p>&copy; 2026 Wyn Group Inc. &middot; <a href="index.html">Home</a> &middot; <a href="roofing.html">Roofing Leads</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p></footer>

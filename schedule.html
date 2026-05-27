@@ -15,8 +15,7 @@
 .sch h1{font-family:'Playfair Display',serif;font-size:clamp(24px,3.5vw,34px);font-weight:700;line-height:1.15;margin-bottom:10px}.sch h1 em{color:var(--t);font-style:normal}
 .sch p{font-size:15px;color:var(--gr);line-height:1.7;margin-bottom:24px;font-weight:300}
 .cal-wrap{max-width:600px;margin:0 auto;padding:0 4% 20px}
-.cal-card{background:var(--w);border:1px solid var(--ln);border-radius:16px;padding:24px;box-shadow:0 4px 24px rgba(0,0,0,.06);min-height:400px}
-.cal-card iframe{width:100%;min-height:500px;border:none;border-radius:8px}
+.cal-card{background:var(--w);border:1px solid var(--ln);border-radius:16px;padding:24px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
 .fallback{text-align:center;padding:16px 4%;font-size:14px;color:var(--mt);font-weight:300;max-width:500px;margin:0 auto}
 .fallback strong{color:var(--tx);font-weight:600}
 .trust-bottom{max-width:500px;margin:0 auto;padding:28px 4% 48px;display:flex;flex-direction:column;gap:12px}
@@ -40,8 +39,27 @@
 
 <div class="cal-wrap"><div class="cal-card">
 <!-- GHL Calendar Embed — replace src with your actual GHL calendar widget URL -->
-<iframe src="https://api.leadconnectorhq.com/widget/booking/WNdY9lLeI0vOqo0vqBrC" scrolling="no" id="ghl-cal"></iframe>
+<iframe src="https://api.leadconnectorhq.com/widget/booking/WNdY9lLeI0vOqo0vqBrC" id="ghl-cal" style="width:100%;min-height:750px;border:none;border-radius:8px;overflow:hidden"></iframe>
 </div></div>
+
+<script>
+// Auto-resize GHL calendar iframe
+var cal=document.getElementById('ghl-cal');
+window.addEventListener('message',function(e){
+  if(e.data&&e.data.type==='resize'&&e.data.height){
+    cal.style.height=e.data.height+'px';
+  }
+});
+// Fallback: observe iframe body for changes
+try{
+  var observer=new MutationObserver(function(){
+    try{var h=cal.contentWindow.document.body.scrollHeight;if(h>400)cal.style.height=h+'px'}catch(e){}
+  });
+  cal.addEventListener('load',function(){
+    try{observer.observe(cal.contentWindow.document.body,{childList:true,subtree:true,attributes:true})}catch(e){}
+  });
+}catch(e){}
+</script>
 
 <p class="fallback">Can't find a time? <strong>No worries &mdash; we'll call you within the hour.</strong> Keep your phone nearby.</p>
 

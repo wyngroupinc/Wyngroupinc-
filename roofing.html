@@ -139,17 +139,18 @@
 <div class="ticker" id="ticker"><div class="ti" id="ticker-av"></div><div class="tt" id="ticker-text"></div></div>
 <script>
 (function(){var msgs=[
-{m:"just claimed their 5 free leads"},
-{m:"just booked 3 inspections from trial leads"},
-{m:"just started their free trial"},
-{m:"just went from trial to paid buyer"},
-{m:"just locked in their area"},
-{m:"just received their first lead"},
-{m:"just booked an inspection from a trial lead"},
-{m:"just signed up for exclusive leads"}
+{n:"Mike J.",m:"just claimed his 5 free leads",a:"MJ"},
+{n:"Carlos R.",m:"booked 3 inspections from trial leads",a:"CR"},
+{n:"Brian T.",m:"just started his free trial",a:"BT"},
+{n:"David M.",m:"just went from trial to paid buyer",a:"DM"},
+{n:"James W.",m:"just locked in his area",a:"JW"},
+{n:"Marcus L.",m:"just signed up for exclusive leads",a:"ML"},
+{n:"Ryan K.",m:"just received his first lead",a:"RK"},
+{n:"Anthony P.",m:"booked an inspection from a trial lead",a:"AP"},
+{n:"Steve H.",m:"just claimed his 5 free leads",a:"SH"},
+{n:"Derek F.",m:"just started receiving leads",a:"DF"}
 ];var el=document.getElementById('ticker'),txt=document.getElementById('ticker-text'),av=document.getElementById('ticker-av');var i=0;
-var names=['A roofing contractor','A roofer','A contractor','A roofing company','A storm restoration company','A local roofer'];
-function getLocation(){return fetch('https://ipapi.co/json/').then(function(r){return r.json()}).then(function(d){return{city:d.city||'',region:d.region_code||d.region||'',full:d.city&&d.region_code?d.city+', '+d.region_code:d.city||'your area'}}).catch(function(){return{city:'',region:'',full:'your area'}})}
-getLocation().then(function(loc){function show(){var m=msgs[i%msgs.length];var n=names[i%names.length];av.textContent=n.charAt(0);txt.innerHTML='<strong>'+n+' in '+loc.full+'</strong><br><span>'+m.m+' — just now</span>';el.classList.add('show');setTimeout(function(){el.classList.remove('show')},4000);setTimeout(function(){i++;show()},5000)}setTimeout(show,3000)})})();
+function getLocation(){return fetch('https://ipapi.co/json/').then(function(r){return r.json()}).then(function(d){return d.city&&d.region_code?d.city+', '+d.region_code:d.city||'your area'}).catch(function(){return 'your area'})}
+getLocation().then(function(loc){function show(){var m=msgs[i%msgs.length];av.textContent=m.a;txt.innerHTML='<strong>'+m.n+' in '+loc+'</strong><br><span>'+m.m+' — just now</span>';el.classList.add('show');setTimeout(function(){el.classList.remove('show')},4000);setTimeout(function(){i++;show()},6000)}setTimeout(show,4000)})})();
 </script>
 </body></html>

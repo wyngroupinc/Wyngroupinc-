@@ -106,16 +106,9 @@ a{text-decoration:none;color:inherit}
 
 <!-- Form -->
 <div class="form-wrap"><div class="form-card">
-<!-- Loading skeleton shown while iframe loads -->
-<div id="form-loader" style="text-align:center;padding:40px 0">
-<div style="width:40px;height:40px;border:3px solid #e5e7eb;border-top-color:#1a9988;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 12px"></div>
-<p style="font-size:13px;color:#6b7280">Loading form...</p>
-</div>
-<style>@keyframes spin{to{transform:rotate(360deg)}}</style>
 <iframe
-    src="about:blank"
-    data-src="https://api.leadconnectorhq.com/widget/form/rPbHh5LBi4jQhL0SqxJb"
-    style="width:100%;height:750px;border:none;border-radius:3px;opacity:0;transition:opacity .3s"
+    src="https://api.leadconnectorhq.com/widget/form/rPbHh5LBi4jQhL0SqxJb"
+    style="width:100%;height:750px;border:none;border-radius:3px"
     id="inline-rPbHh5LBi4jQhL0SqxJb" 
     data-layout="{'id':'INLINE'}"
     data-trigger-type="alwaysShow"
@@ -129,14 +122,8 @@ a{text-decoration:none;color:inherit}
     data-layout-iframe-id="inline-rPbHh5LBi4jQhL0SqxJb"
     data-form-id="rPbHh5LBi4jQhL0SqxJb"
     title="Roofing Lead Buyers"
-    onload="this.style.opacity='1';document.getElementById('form-loader').style.display='none'"
 ></iframe>
-<script>
-// Lazy-load iframe after page renders
-var fi=document.getElementById('inline-rPbHh5LBi4jQhL0SqxJb');
-requestAnimationFrame(function(){fi.src=fi.dataset.src});
-</script>
-<script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
+<script src="https://link.msgsndr.com/js/form_embed.js" async></script>
 </div></div>
 
 <!-- What each lead includes -->
@@ -186,30 +173,24 @@ window.addEventListener('message',function(e){
     if(typeof fbq!=='undefined')fbq('track','Lead');
   }
 });
-var ghlForm=document.getElementById('inline-rPbHh5LBi4jQhL0SqxJb');
-if(ghlForm){
-  var ro=new MutationObserver(function(){
-    try{var h=ghlForm.contentWindow.document.body.scrollHeight;if(h>300&&h<1100)ghlForm.style.height=h+'px'}catch(e){}
-  });
-  ghlForm.addEventListener('load',function(){
-    try{ro.observe(ghlForm.contentWindow.document.body,{childList:true,subtree:true,attributes:true})}catch(e){}
-  });
-}
 </script>
 
 <!-- Social proof ticker -->
 <script>
 (function(){var msgs=[
-{m:"just claimed their 5 free leads"},
-{m:"just started their free trial"},
-{m:"just checked their area availability"},
-{m:"just submitted their info"},
-{m:"just locked in their area"},
-{m:"just signed up for exclusive leads"}
+{n:"Mike J.",m:"just claimed his 5 free leads",a:"MJ"},
+{n:"Carlos R.",m:"just started his free trial",a:"CR"},
+{n:"Brian T.",m:"booked 3 inspections from trial leads",a:"BT"},
+{n:"David M.",m:"just submitted his info",a:"DM"},
+{n:"James W.",m:"just locked in his area",a:"JW"},
+{n:"Marcus L.",m:"just signed up for exclusive leads",a:"ML"},
+{n:"Ryan K.",m:"just checked his area availability",a:"RK"},
+{n:"Anthony P.",m:"went from trial to paid buyer",a:"AP"},
+{n:"Steve H.",m:"just claimed his 5 free leads",a:"SH"},
+{n:"Derek F.",m:"just started receiving leads",a:"DF"}
 ];var el=document.getElementById('ticker'),txt=document.getElementById('ticker-text'),av=document.getElementById('ticker-av');var i=0;
-var names=['A roofing contractor','A roofer','A contractor','A roofing company','A storm restoration company','A local roofer'];
-function getLocation(){return fetch('https://ipapi.co/json/').then(function(r){return r.json()}).then(function(d){return{city:d.city||'',region:d.region_code||d.region||'',full:d.city&&d.region_code?d.city+', '+d.region_code:d.city||'your area'}}).catch(function(){return{city:'',region:'',full:'your area'}})}
-getLocation().then(function(loc){function show(){var m=msgs[i%msgs.length];var n=names[i%names.length];av.textContent=n.charAt(0);txt.innerHTML='<strong>'+n+' in '+loc.full+'</strong><br><span>'+m.m+' — just now</span>';el.classList.add('show');setTimeout(function(){el.classList.remove('show')},4000);setTimeout(function(){i++;show()},5000)}setTimeout(show,3000)})})();
+function getLocation(){return fetch('https://ipapi.co/json/').then(function(r){return r.json()}).then(function(d){return d.city&&d.region_code?d.city+', '+d.region_code:d.city||'your area'}).catch(function(){return 'your area'})}
+getLocation().then(function(loc){function show(){var m=msgs[i%msgs.length];av.textContent=m.a;txt.innerHTML='<strong>'+m.n+' in '+loc+'</strong><br><span>'+m.m+' — just now</span>';el.classList.add('show');setTimeout(function(){el.classList.remove('show')},4000);setTimeout(function(){i++;show()},6000)}setTimeout(show,4000)})})();
 </script>
 
 </body></html>

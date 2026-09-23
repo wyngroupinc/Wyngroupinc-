@@ -8,6 +8,7 @@
 <meta property="og:title" content="Stop paying for “exclusive” leads four other shops already called.">
 <meta property="og:description" content="Phone- and email-verified owner, $20k+ monthly deposits, consent record, and a hash tied to your buyer ID on every lead. 25 leads to start, no contract.">
 <meta property="og:type" content="website">
+<meta name="theme-color" content="#003576">
 
 <!-- Awareness target: Solution Aware (stage 3), hook written at Problem Aware. Message-matches the EXCL ad. -->
 
@@ -49,7 +50,7 @@ fbq('track','ViewContent',{content_name:'buyer-landing-exclusive'});
   --max:1080px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0;font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:var(--paper);line-height:1.55;font-size:17px}
 h1,h2{font-family:"Playfair Display",Georgia,"Times New Roman",serif;font-weight:700;line-height:1.12;margin:0 0 .5em;color:var(--ink);letter-spacing:-.01em}
@@ -61,9 +62,12 @@ p{margin:0 0 1em;max-width:62ch}
 a{color:var(--ink)}
 .mono{font-family:"DM Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
-section{padding:56px 0}
+section{padding:44px 0}
+@media (min-width:600px){section{padding:56px 0}}
 @media (min-width:860px){section{padding:88px 0}}
 .lead{font-size:1.12rem;color:var(--muted);max-width:56ch}
+.cta-inline{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
+.cta-inline .hint{color:var(--muted);font-size:.92rem;margin:0}
 .btn{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;text-decoration:none;font-weight:600;padding:16px 26px;border-radius:var(--radius);font-size:1.05rem;border:0;cursor:pointer;min-height:52px}
 .btn:hover{background:var(--teal-dark)}
 .btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
@@ -92,7 +96,8 @@ section{padding:56px 0}
 @media (max-width:640px){.nav .btn{display:none}.brand .mark{height:28px}.wordmark{font-size:.95rem}}
 
 /* Hero */
-.hero{background:var(--paper);color:var(--text);padding:56px 0 64px;border-bottom:1px solid var(--line)}
+.hero{background:var(--paper);color:var(--text);padding:40px 0 48px;border-bottom:1px solid var(--line)}
+@media (min-width:600px){.hero{padding:56px 0 64px}}
 .hero h1{color:var(--ink)}
 .hero .lead{color:var(--muted)}
 .hero-grid{display:grid;gap:40px;align-items:start}
@@ -113,13 +118,15 @@ section{padding:56px 0}
 .hash .ic{color:#5CD1BC}
 .hash span{display:block;color:#A9B8CF;font-family:"DM Sans",sans-serif;font-size:.8rem}
 .card-note{padding:10px 16px;font-size:.78rem;color:var(--muted);background:#FBFBFC;border-top:1px solid var(--line)}
+@media (max-width:480px){.card dl{grid-template-columns:1fr;gap:2px 0}.card dd{margin:0 0 10px 25px}.card dt{font-size:.8rem}}
 
 /* Agitate */
 .agitate p{font-size:1.08rem}
 .pains{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:14px}
 @media (min-width:800px){.pains{grid-template-columns:1fr 1fr 1fr;gap:20px}}
-.pains li{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:18px 18px 12px;display:flex;flex-direction:column;gap:10px}
-.pains .ic{color:var(--red);width:26px;height:26px}
+.pains li{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:16px 16px 12px;display:flex;gap:12px;align-items:flex-start}
+@media (min-width:800px){.pains li{flex-direction:column;gap:10px;padding:18px 18px 12px}}
+.pains .ic{color:var(--red);width:26px;height:26px;flex:0 0 26px;margin-top:2px}
 .pains p{font-size:1rem;margin:0}
 .reveal{border-left:4px solid var(--green);padding:6px 0 6px 20px;margin:28px 0 0;max-width:62ch}
 .reveal p:last-child{margin-bottom:0}
@@ -127,7 +134,8 @@ section{padding:56px 0}
 /* Steps */
 .steps{list-style:none;padding:0;margin:0;counter-reset:s;display:grid;gap:22px}
 @media (min-width:860px){.steps{grid-template-columns:1fr 1fr;gap:28px 40px}}
-.steps li{counter-increment:s;padding-left:64px;position:relative}
+.steps li{counter-increment:s;padding-left:62px;position:relative}
+.steps li p{margin-bottom:0}
 .steps li .badge{position:absolute;left:0;top:0;width:48px;height:48px;border-radius:50%;background:var(--ink);color:#5CD1BC;display:grid;place-items:center}
 .steps li .badge::after{content:counter(s);position:absolute;right:-4px;bottom:-4px;width:20px;height:20px;border-radius:50%;background:var(--green);color:#fff;font-size:.75rem;font-weight:700;display:grid;place-items:center}
 .warranty{margin-top:40px;background:var(--green-2);border:1px solid #BFE0D8;border-radius:var(--radius);padding:20px 22px;max-width:74ch;display:flex;gap:16px;align-items:flex-start}
@@ -136,19 +144,21 @@ section{padding:56px 0}
 .warranty p{margin:0}
 
 /* Fields grid */
-.fields{list-style:none;padding:0;margin:0;display:grid;gap:12px}
-@media (min-width:600px){.fields{grid-template-columns:1fr 1fr}}
-@media (min-width:900px){.fields{grid-template-columns:1fr 1fr 1fr}}
-.fields li{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:flex;align-items:center;gap:12px;font-weight:500}
+.fields{list-style:none;padding:0;margin:0;display:grid;gap:10px;grid-template-columns:1fr 1fr}
+@media (min-width:700px){.fields{grid-template-columns:1fr 1fr 1fr;gap:12px}}
+@media (min-width:1000px){.fields{grid-template-columns:1fr 1fr 1fr 1fr}}
+.fields li{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;align-items:center;gap:10px;font-weight:500;font-size:.95rem;min-width:0}
+.fields li>div{min-width:0}
 .fields .ic{color:var(--ink)}
 .fields li small{display:block;font-weight:400;color:var(--muted);font-size:.85rem}
 .verify{display:grid;gap:12px;margin:26px 0 0}
 @media (min-width:700px){.verify{grid-template-columns:1fr 1fr}}
 @media (min-width:1000px){.verify{grid-template-columns:1fr 1fr 1fr 1fr}}
-.verify div{background:var(--green-2);border:1px solid #BFE0CF;border-radius:8px;padding:16px;display:flex;gap:12px;align-items:flex-start}
-.verify .ic{color:var(--green);width:26px;height:26px;flex-basis:26px;margin-top:2px}
-.verify strong{display:block;color:var(--ink)}
-.verify span{font-size:.92rem;color:var(--text)}
+.verify>div{background:var(--green-2);border:1px solid #BFE0D8;border-radius:8px;padding:16px;display:flex;gap:12px;align-items:flex-start}
+.verify>div>div{flex:1 1 auto;min-width:0}
+.verify .ic{color:var(--green);width:26px;height:26px;flex:0 0 26px;margin-top:2px}
+.verify strong{display:block;color:var(--ink);margin-bottom:2px}
+.verify span{font-size:.92rem;color:var(--text);display:block}
 
 /* Reviews */
 .reviews{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -176,7 +186,8 @@ section{padding:56px 0}
 
 /* Terms */
 .terms{display:grid;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--white)}
-.terms div{display:grid;grid-template-columns:1fr;gap:6px;padding:16px 20px;border-bottom:1px solid var(--line)}
+.terms div{display:grid;grid-template-columns:1fr;gap:6px;padding:14px 16px;border-bottom:1px solid var(--line);font-size:.97rem}
+@media (min-width:700px){.terms div{padding:16px 20px;font-size:1rem}}
 .terms div:last-child{border-bottom:0}
 @media (min-width:700px){.terms div{grid-template-columns:220px 1fr;gap:20px}}
 .terms b{color:var(--ink);display:flex;align-items:center;gap:10px}
@@ -202,11 +213,13 @@ section{padding:56px 0}
 .next li{display:flex;gap:14px;align-items:flex-start;color:#DCE3EE}
 .next .badge{width:40px;height:40px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;flex:0 0 40px}
 .formcard{background:var(--white);border-radius:8px;padding:8px 8px 16px;color:var(--text)}
-.formcard iframe{width:100%;border:0;border-radius:6px;min-height:900px}
+.formcard iframe{width:100%;border:0;border-radius:6px;min-height:900px !important;height:900px;display:block}
+.fallback{font-size:.9rem;color:var(--muted);padding:10px 12px 0;margin:0}
+.fallback a{color:var(--green);font-weight:600}
 .consent{font-size:.82rem;color:var(--muted);padding:8px 12px 0;max-width:none}
 
 /* Footer */
-footer{padding:36px 0 110px;color:var(--muted);font-size:.85rem}
+footer{padding:36px 0 120px;color:var(--muted);font-size:.85rem}
 footer p{max-width:none}
 @media (min-width:860px){footer{padding-bottom:48px}}
 
@@ -302,7 +315,7 @@ footer p{max-width:none}
         <dt><svg class="ic sm"><use href="#i-mail"/></svg> Owner notified</dt><dd class="ok"><svg class="ic sm"><use href="#i-check"/></svg> Text and email sent with your company name</dd>
       </dl>
       <div class="hash"><svg class="ic lg"><use href="#i-hash"/></svg><div><span>Buyer hash, tied to your buyer ID</span><span class="mono" style="color:#BFE9E1;font-size:.9rem">7f3a1c…c91e — one buyer, one lead</span></div></div>
-      <div class="card-note">Real records carry the owner’s real name, verified phone and verified email, plus entity type, industry and purpose of funds. Thirteen fields on every lead.</div>
+      <div class="card-note">Real records carry the owner’s real name, verified phone and verified email, plus entity type, industry and purpose of funds. Twelve owner-filled fields plus the delivery timestamp on every lead.</div>
     </aside>
   </div>
 </header>
@@ -357,13 +370,17 @@ footer p{max-width:none}
       <svg class="ic"><use href="#i-refresh"/></svg>
       <p><strong>The warranty behind the word.</strong> If a merchant we sent you shows up from another vendor within 30 days, your next five leads are free. Show us the other vendor’s record and we credit you the same day.</p>
     </div>
+    <div class="cta-inline">
+      <a class="btn" href="#test">Start My 25-Lead Test <svg class="ic sm"><use href="#i-arrow"/></svg></a>
+      <p class="hint">Prepaid, no contract. Three submissions or we replace the batch.</p>
+    </div>
   </div>
 </section>
 
 <section id="fields">
   <div class="wrap">
     <h2>What’s on every lead</h2>
-    <p class="lead">Thirteen fields, filled in by the owner, before your closer picks up the phone.</p>
+    <p class="lead">Twelve fields, filled in by the owner, before your closer picks up the phone. Plus the delivery timestamp on every record.</p>
     <ul class="fields">
       <li><svg class="ic"><use href="#i-user"/></svg><div>Owner’s full name</div></li>
       <li><svg class="ic"><use href="#i-call"/></svg><div>Phone <small>verified by text code</small></div></li>
@@ -377,7 +394,6 @@ footer p{max-width:none}
       <li><svg class="ic"><use href="#i-target"/></svg><div>Purpose of funds</div></li>
       <li><svg class="ic"><use href="#i-gauge"/></svg><div>Credit band</div></li>
       <li><svg class="ic"><use href="#i-layers"/></svg><div>Existing business loans</div></li>
-      <li><svg class="ic"><use href="#i-clock"/></svg><div>Delivery timestamp</div></li>
     </ul>
     <div class="verify">
       <div><svg class="ic"><use href="#i-phone"/></svg><div><strong>Phone and email verified</strong><span>The owner typed the code. The email is checked. Both work.</span></div></div>
@@ -401,6 +417,10 @@ footer p{max-width:none}
       <li><blockquote>We were paying less for leads elsewhere, but the quality was terrible. I’d rather pay for leads that actually turn into applications and funded deals. The ROI has been much better for us here.</blockquote><cite><svg class="ic sm"><use href="#i-user"/></svg><span>Brandon S.<small>Velocity Business Funding</small></span></cite></li>
     </ul>
     <p class="rnote">Results vary by floor, funders and follow-up. Your 25-lead test is how you find out what these leads do for you.</p>
+    <div class="cta-inline">
+      <a class="btn" href="#test">Start My 25-Lead Test <svg class="ic sm"><use href="#i-arrow"/></svg></a>
+      <p class="hint">Sample lead card in your inbox within the hour.</p>
+    </div>
   </div>
 </section>
 
@@ -440,6 +460,10 @@ footer p{max-width:none}
       <div><b><svg class="ic"><use href="#i-gauge"/></svg> Volume</b><span>A capped daily allotment that you set. Volume grows with our ad spend, and early buyers keep priority as it grows. We won’t promise you a number of leads a day.</span></div>
       <div><b><svg class="ic"><use href="#i-mail"/></svg> Owner notification</b><span>When a lead posts to you, the owner gets a text and an email with your company name and who will be calling. You give us that wording on the call, and it stays the same on every lead.</span></div>
       <div><b><svg class="ic"><use href="#i-shield"/></svg> Consent and calling</b><span>Consent language and a TrustedForm certificate on every lead. You stay responsible for your own dialer, DNC scrub and state rules. We put that in writing so nobody guesses.</span></div>
+    </div>
+    <div class="cta-inline">
+      <a class="btn" href="#test">Start My 25-Lead Test <svg class="ic sm"><use href="#i-arrow"/></svg></a>
+      <p class="hint">Price and daily cap get set on a 15-minute call.</p>
     </div>
   </div>
 </section>
@@ -512,8 +536,10 @@ footer p{max-width:none}
         data-layout-iframe-id="inline-pjCAl2ufKk1tm2zkJRK3"
         data-form-id="pjCAl2ufKk1tm2zkJRK3"
         title="Start your 25-lead test"
-        loading="lazy"></iframe>
+        height="900"
+        style="min-height:900px"></iframe>
       <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+      <p class="fallback">Form not showing? <a href="https://api.leadconnectorhq.com/widget/form/pjCAl2ufKk1tm2zkJRK3" target="_blank" rel="noopener">Open it in a new tab</a> or email <a href="mailto:info@wyngroupinc.com">info@wyngroupinc.com</a>.</p>
       <p class="consent">By submitting, you agree that Wyn Group Inc may call, text or email you about this test using the details you provide, including by automated means. Message and data rates may apply. Reply STOP to end texts. This is a business-to-business offer for lead buyers, not an offer of credit.</p>
     </div>
   </div>

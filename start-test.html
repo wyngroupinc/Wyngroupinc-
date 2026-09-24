@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Start Your 25-Lead Test — Wyn Group Inc</title>
-<meta name="description" content="Three questions and your contact details. We send a sample lead card within the hour and book a 15-minute call to set your daily cap.">
+<meta name="description" content="Three questions and your contact details. We book a 15-minute call to set your daily cap and price.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#003576">
 
@@ -55,8 +55,10 @@ a{color:var(--ink)}
 .back:hover{color:var(--green)}
 @media (max-width:480px){.back span{display:none}}
 
-.wrap{max-width:760px;margin:0 auto;padding:0 20px}
-.head{padding:36px 0 8px}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+.head{padding:36px 0 8px;text-align:center}
+.head p.lead{margin-left:auto;margin-right:auto}
+.trust{justify-content:center}
 @media (min-width:700px){.head{padding:56px 0 12px}}
 .head p.lead{color:var(--muted);font-size:1.08rem;max-width:56ch}
 
@@ -65,14 +67,14 @@ a{color:var(--ink)}
 .trust .ic{color:var(--green)}
 
 /* Survey card */
-.survey{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:10px;box-shadow:0 12px 40px rgba(0,53,118,.08)}
-.survey iframe{width:100%;border:0;display:block;min-height:620px}
+.survey{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:6px;box-shadow:0 12px 40px rgba(0,53,118,.08);max-width:600px;margin:0 auto}
+.survey iframe{width:100%;border:0;display:block;min-height:380px}
 .fallback{font-size:.9rem;color:var(--muted);padding:10px 8px 4px;margin:0}
 .fallback a{color:var(--green);font-weight:600}
 
 /* Next steps */
-.next{list-style:none;padding:0;margin:32px 0 0;display:grid;gap:14px}
-@media (min-width:700px){.next{grid-template-columns:1fr 1fr 1fr;gap:18px}}
+.next{list-style:none;padding:0;margin:32px auto 0;display:grid;gap:14px;max-width:600px}
+@media (min-width:700px){.next{grid-template-columns:1fr 1fr 1fr;gap:18px;max-width:none}}
 .next li{display:flex;gap:12px;align-items:flex-start;font-size:.95rem;color:var(--text)}
 .next .badge{width:36px;height:36px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;flex:0 0 36px}
 
@@ -107,7 +109,7 @@ footer{padding:40px 0 40px;color:var(--muted);font-size:.85rem}
 <main>
   <div class="wrap head">
     <h1>Start your 25-lead test</h1>
-    <p class="lead">Three questions and your contact details. We’ll email a sample lead card within the hour and book a 15-minute call to set your daily cap.</p>
+    <p class="lead">Three questions and your contact details. We’ll book a 15-minute call to set your daily cap and price.</p>
     <ul class="trust">
       <li><svg class="ic"><use href="#i-check"/></svg> Prepaid, stop any day</li>
       <li><svg class="ic"><use href="#i-check"/></svg> No contract</li>
@@ -117,13 +119,13 @@ footer{padding:40px 0 40px;color:var(--muted);font-size:.85rem}
 
   <div class="wrap">
     <div class="survey">
-      <iframe src="https://api.leadconnectorhq.com/widget/survey/8Hgp5SUJggWsr4aQqhNz" style="border:none;width:100%;min-height:620px;" scrolling="no" id="8Hgp5SUJggWsr4aQqhNz" title="survey" data-cookie-consent="true" data-cookie-consent-provider="auto"></iframe>
+      <iframe src="https://api.leadconnectorhq.com/widget/survey/8Hgp5SUJggWsr4aQqhNz" style="border:none;width:100%;min-height:380px;" scrolling="no" id="8Hgp5SUJggWsr4aQqhNz" title="survey" data-cookie-consent="true" data-cookie-consent-provider="auto"></iframe>
       <script src="https://link.msgsndr.com/js/form_embed.js"></script>
       <p class="fallback">Form not loading? <a href="https://api.leadconnectorhq.com/widget/survey/8Hgp5SUJggWsr4aQqhNz" target="_blank" rel="noopener">Open it in a new tab</a> or email <a href="mailto:info@wyngroupinc.com">info@wyngroupinc.com</a>.</p>
     </div>
 
     <ol class="next">
-      <li><span class="badge"><svg class="ic"><use href="#i-mail"/></svg></span><span>Sample lead card in your inbox within the hour.</span></li>
+      <li><span class="badge"><svg class="ic"><use href="#i-check"/></svg></span><span>We confirm your shop is a fit, same day.</span></li>
       <li><span class="badge"><svg class="ic"><use href="#i-call"/></svg></span><span>A 15-minute call to set your daily cap and price.</span></li>
       <li><span class="badge"><svg class="ic"><use href="#i-bolt"/></svg></span><span>Fund the wallet. First lead in your CRM within 24 hours.</span></li>
     </ol>

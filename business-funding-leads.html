@@ -213,7 +213,7 @@ section{padding:44px 0}
 .next li{display:flex;gap:14px;align-items:flex-start;color:#DCE3EE}
 .next .badge{width:40px;height:40px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;flex:0 0 40px}
 .formcard{background:var(--white);border-radius:8px;padding:8px 8px 16px;color:var(--text)}
-.formcard iframe{width:100%;border:0;border-radius:6px;min-height:900px !important;height:900px;display:block}
+.formcard iframe{width:100%;border:0;border-radius:6px;display:block}
 .fallback{font-size:.9rem;color:var(--muted);padding:10px 12px 0;margin:0}
 .fallback a{color:var(--green);font-weight:600}
 .consent{font-size:.82rem;color:var(--muted);padding:8px 12px 0;max-width:none}
@@ -518,28 +518,10 @@ footer p{max-width:none}
       </ol>
     </div>
     <div class="formcard">
-      <!-- Existing GHL form "Business Loans Buyers". Add the two knockout questions in GHL:
-           "How many closers are on your floor?" and "Which funders do you submit to most?"
-           Set the form's redirect to a thank-you page that fires fbq('track','Lead'). -->
-      <iframe
-        src="https://api.leadconnectorhq.com/widget/form/pjCAl2ufKk1tm2zkJRK3"
-        id="inline-pjCAl2ufKk1tm2zkJRK3"
-        data-layout="{'id':'INLINE'}"
-        data-trigger-type="alwaysShow"
-        data-trigger-value=""
-        data-activation-type="alwaysActivated"
-        data-activation-value=""
-        data-deactivation-type="neverDeactivate"
-        data-deactivation-value=""
-        data-form-name="Business Loans Buyers"
-        data-height="900"
-        data-layout-iframe-id="inline-pjCAl2ufKk1tm2zkJRK3"
-        data-form-id="pjCAl2ufKk1tm2zkJRK3"
-        title="Start your 25-lead test"
-        height="900"
-        style="min-height:900px"></iframe>
+      <!-- GHL survey embed. The embed script sizes the iframe from inside GHL; the min-height below is a fallback so it never renders at zero. -->
+      <iframe src="https://api.leadconnectorhq.com/widget/survey/8Hgp5SUJggWsr4aQqhNz" style="border:none;width:100%;min-height:640px;" scrolling="no" id="8Hgp5SUJggWsr4aQqhNz" title="survey" data-cookie-consent="true" data-cookie-consent-provider="auto"></iframe>
       <script src="https://link.msgsndr.com/js/form_embed.js"></script>
-      <p class="fallback">Form not showing? <a href="https://api.leadconnectorhq.com/widget/form/pjCAl2ufKk1tm2zkJRK3" target="_blank" rel="noopener">Open it in a new tab</a> or email <a href="mailto:info@wyngroupinc.com">info@wyngroupinc.com</a>.</p>
+      <p class="fallback">Form not showing? <a href="https://api.leadconnectorhq.com/widget/survey/8Hgp5SUJggWsr4aQqhNz" target="_blank" rel="noopener">Open it in a new tab</a> or email <a href="mailto:info@wyngroupinc.com">info@wyngroupinc.com</a>.</p>
       <p class="consent">By submitting, you agree that Wyn Group Inc may call, text or email you about this test using the details you provide, including by automated means. Message and data rates may apply. Reply STOP to end texts. This is a business-to-business offer for lead buyers, not an offer of credit.</p>
     </div>
   </div>

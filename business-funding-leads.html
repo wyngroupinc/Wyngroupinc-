@@ -212,11 +212,6 @@ section{padding:44px 0}
 .next{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:16px}
 .next li{display:flex;gap:14px;align-items:flex-start;color:#DCE3EE}
 .next .badge{width:40px;height:40px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;flex:0 0 40px}
-.formcard{background:var(--white);border-radius:8px;padding:8px 8px 16px;color:var(--text)}
-.formcard iframe{width:100%;border:0;border-radius:6px;display:block}
-.fallback{font-size:.9rem;color:var(--muted);padding:10px 12px 0;margin:0}
-.fallback a{color:var(--green);font-weight:600}
-.consent{font-size:.82rem;color:var(--muted);padding:8px 12px 0;max-width:none}
 
 /* Footer */
 footer{padding:36px 0 120px;color:var(--muted);font-size:.85rem}
@@ -277,7 +272,7 @@ footer p{max-width:none}
     </a>
     <div class="navright">
       <a class="portal" href="https://leads.wyngroupinc.com/login">Portal login</a>
-      <a class="btn" href="#test">Start My 25-Lead Test <svg class="ic sm"><use href="#i-arrow"/></svg></a>
+      <a class="btn" href="/start-test">Start My 25-Lead Test <svg class="ic sm"><use href="#i-arrow"/></svg></a>
     </div>
   </div>
 </nav>
@@ -288,7 +283,7 @@ footer p{max-width:none}
       <p class="who"><svg class="ic sm"><use href="#i-users"/></svg> If you fund deals, read this before you buy another lead.</p>
       <h1>Stop paying for “exclusive” leads four other shops already called.</h1>
       <p class="lead">Every business-funding lead we send has a phone- and email-verified owner, $20,000 or more a month in deposits, a consent record, and a hash that proves it went to you and no one else. You start with 25. No contract.</p>
-      <a class="btn" href="#test">Start My 25-Lead Test <svg class="ic sm"><use href="#i-arrow"/></svg></a>
+      <a class="btn" href="/start-test">Start My 25-Lead Test <svg class="ic sm"><use href="#i-arrow"/></svg></a>
       <ul class="iconrow">
         <li><svg class="ic sm"><use href="#i-check"/></svg> Prepaid, stop any day</li>
         <li><svg class="ic sm"><use href="#i-check"/></svg> No contract</li>
@@ -371,7 +366,7 @@ footer p{max-width:none}
       <p><strong>The warranty behind the word.</strong> If a merchant we sent you shows up from another vendor within 30 days, your next five leads are free. Show us the other vendor’s record and we credit you the same day.</p>
     </div>
     <div class="cta-inline">
-      <a class="btn" href="#test">Start My 25-Lead Test <svg class="ic sm"><use href="#i-arrow"/></svg></a>
+      <a class="btn" href="/start-test">Start My 25-Lead Test <svg class="ic sm"><use href="#i-arrow"/></svg></a>
       <p class="hint">Prepaid, no contract. Three submissions or we replace the batch.</p>
     </div>
   </div>
@@ -418,7 +413,7 @@ footer p{max-width:none}
     </ul>
     <p class="rnote">Results vary by floor, funders and follow-up. Your 25-lead test is how you find out what these leads do for you.</p>
     <div class="cta-inline">
-      <a class="btn" href="#test">Start My 25-Lead Test <svg class="ic sm"><use href="#i-arrow"/></svg></a>
+      <a class="btn" href="/start-test">Start My 25-Lead Test <svg class="ic sm"><use href="#i-arrow"/></svg></a>
       <p class="hint">Sample lead card in your inbox within the hour.</p>
     </div>
   </div>
@@ -462,7 +457,7 @@ footer p{max-width:none}
       <div><b><svg class="ic"><use href="#i-shield"/></svg> Consent and calling</b><span>Consent language and a TrustedForm certificate on every lead. You stay responsible for your own dialer, DNC scrub and state rules. We put that in writing so nobody guesses.</span></div>
     </div>
     <div class="cta-inline">
-      <a class="btn" href="#test">Start My 25-Lead Test <svg class="ic sm"><use href="#i-arrow"/></svg></a>
+      <a class="btn" href="/start-test">Start My 25-Lead Test <svg class="ic sm"><use href="#i-arrow"/></svg></a>
       <p class="hint">Price and daily cap get set on a 15-minute call.</p>
     </div>
   </div>
@@ -510,19 +505,17 @@ footer p{max-width:none}
   <div class="wrap two">
     <div>
       <h2>Start your 25-lead test</h2>
-      <p class="lead">Prepaid, no contract, three submissions or we replace the batch. Here’s what happens after you fill this out.</p>
+      <p class="lead">Prepaid, no contract, three submissions or we replace the batch. Thirty seconds to apply. Here’s what happens after.</p>
       <ol class="next">
-        <li><span class="badge"><svg class="ic"><use href="#i-mail"/></svg></span><span>We email you a sample lead card within the hour so you can see the fields, the timestamp and the hash.</span></li>
+        <li><span class="badge"><svg class="ic"><use href="#i-mail"/></svg></span><span>We email you a sample lead card within the hour so you can see the fields and the timestamp.</span></li>
         <li><span class="badge"><svg class="ic"><use href="#i-call"/></svg></span><span>We book a 15-minute call, set your daily cap, and talk price with your numbers in front of us.</span></li>
         <li><span class="badge"><svg class="ic"><use href="#i-bolt"/></svg></span><span>You fund the wallet in your portal. The first lead lands in your CRM within 24 hours.</span></li>
       </ol>
     </div>
-    <div class="formcard">
-      <!-- GHL survey embed. The embed script sizes the iframe from inside GHL; the min-height below is a fallback so it never renders at zero. -->
-      <iframe src="https://api.leadconnectorhq.com/widget/survey/8Hgp5SUJggWsr4aQqhNz" style="border:none;width:100%;min-height:640px;" scrolling="no" id="8Hgp5SUJggWsr4aQqhNz" title="survey" data-cookie-consent="true" data-cookie-consent-provider="auto"></iframe>
-      <script src="https://link.msgsndr.com/js/form_embed.js"></script>
-      <p class="fallback">Form not showing? <a href="https://api.leadconnectorhq.com/widget/survey/8Hgp5SUJggWsr4aQqhNz" target="_blank" rel="noopener">Open it in a new tab</a> or email <a href="mailto:info@wyngroupinc.com">info@wyngroupinc.com</a>.</p>
-      <p class="consent">By submitting, you agree that Wyn Group Inc may call, text or email you about this test using the details you provide, including by automated means. Message and data rates may apply. Reply STOP to end texts. This is a business-to-business offer for lead buyers, not an offer of credit.</p>
+    <div class="ctacard">
+      <p class="ctacard-title">Three questions and your contact details. That’s it.</p>
+      <a class="btn big" href="/start-test">Start My 25-Lead Test <svg class="ic sm"><use href="#i-arrow"/></svg></a>
+      <p class="ctacard-note">No contract. Stop any day. Price is set on the call, not on a form.</p>
     </div>
   </div>
 </section>
@@ -534,7 +527,7 @@ footer p{max-width:none}
   </div>
 </footer>
 
-<div class="sticky"><a class="btn" href="#test">Start My 25-Lead Test <svg class="ic sm"><use href="#i-arrow"/></svg></a></div>
+<div class="sticky"><a class="btn" href="/start-test">Start My 25-Lead Test <svg class="ic sm"><use href="#i-arrow"/></svg></a></div>
 
 </body>
 </html>

@@ -8,12 +8,16 @@
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#003576">
 
+<link rel="preconnect" href="https://api.leadconnectorhq.com">
+<link rel="preconnect" href="https://link.msgsndr.com">
+<link rel="dns-prefetch" href="https://services.leadconnectorhq.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
 
 <!-- Meta Pixel (same ID as the landing page). Fire the Lead event on the survey's thank-you page, not here. -->
 <script>
+window.addEventListener('load',function(){setTimeout(function(){
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
@@ -24,6 +28,7 @@ fbq('track','PageView');
 /* Lead fires here because this page is reached right after the form submits.
    Retargeting ads that send warm traffic straight to the calendar should link to /book-call?src=rt so Lead does not fire twice. */
 if(!/[?&]src=rt(&|$)/.test(location.search)){fbq('track','Lead',{content_name:'buyer-test-form'});}
+},300);});
 </script>
 
 <style>
@@ -72,6 +77,15 @@ a{color:var(--ink)}
 .survey{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:6px;box-shadow:0 12px 40px rgba(0,53,118,.08);max-width:600px;margin:0 auto}
 .survey iframe{width:100%;border:0;display:block;min-height:640px}
 .fallback{font-size:.9rem;color:var(--muted);padding:10px 8px 4px;margin:0}
+.skel{position:relative}
+.skel .ph{position:absolute;inset:6px;background:var(--white);border-radius:8px;padding:28px 24px;display:flex;flex-direction:column;gap:14px;z-index:1}
+.skel .ph i{display:block;height:14px;border-radius:7px;background:#EEF1F5}
+.skel .ph i.t{height:22px;width:60%}
+.skel .ph i.w{width:85%}
+.skel .ph i.m{width:70%}
+.skel .ph i.b{height:48px;width:100%;margin-top:10px;background:#E6F4F1}
+.skel .ph small{color:var(--muted);font-size:.85rem;margin-top:6px}
+.skel.ready .ph{display:none}
 .fallback a{color:var(--green);font-weight:600}
 
 /* Next steps */
@@ -83,6 +97,7 @@ a{color:var(--ink)}
 .ready{margin:32px auto 0;max-width:600px;color:var(--muted);text-align:center}
 footer{padding:40px 0 40px;color:var(--muted);font-size:.85rem}
 </style>
+<script src="https://link.msgsndr.com/js/form_embed.js" async></script>
 </head>
 <body>
 
@@ -121,7 +136,7 @@ footer{padding:40px 0 40px;color:var(--muted);font-size:.85rem}
   </div>
 
   <div class="wrap">
-    <div class="survey" id="calendar">
+    <div class="survey skel" id="calendar">
       <!-- GHL calendar. The script below forwards any query string on this page (first_name, last_name, email, phone) into the iframe so the booking form is prefilled.
            Set the survey's completion redirect to:
            https://wyngroupinc.com/book-call?first_name={{contact.first_name}}&last_name={{contact.last_name}}&email={{contact.email}}&phone={{contact.phone}} -->
@@ -135,7 +150,15 @@ footer{padding:40px 0 40px;color:var(--muted);font-size:.85rem}
         if(keep){f.src+=(f.src.indexOf('?')>-1?'&':'?')+keep;}
       })();
       </script>
-      <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+      <div class="ph" aria-hidden="true"><i class="t"></i><i class="w"></i><i class="m"></i><i class="w"></i><i class="b"></i><small>Loading the calendar…</small></div>
+      <script>
+      (function(){
+        var box=document.querySelector('.survey.skel'),f=document.getElementById('WI25bKFq5WY2YS2dmyGL_1790294477166');
+        function ready(){if(box)box.classList.add('ready');}
+        if(f){f.addEventListener('load',ready);}
+        setTimeout(ready,8000);
+      })();
+      </script>
       <p class="fallback">Calendar not loading? <a href="https://api.leadconnectorhq.com/widget/booking/wCuBq53v2f2J9pe84FSB" target="_blank" rel="noopener">Open it in a new tab</a> or email <a href="mailto:info@wyngroupinc.com">info@wyngroupinc.com</a>.</p>
     </div>
 

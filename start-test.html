@@ -8,12 +8,16 @@
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#003576">
 
+<link rel="preconnect" href="https://api.leadconnectorhq.com">
+<link rel="preconnect" href="https://link.msgsndr.com">
+<link rel="dns-prefetch" href="https://services.leadconnectorhq.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
 
 <!-- Meta Pixel (same ID as the landing page). Fire the Lead event on the survey's thank-you page, not here. -->
 <script>
+window.addEventListener('load',function(){setTimeout(function(){
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
@@ -22,6 +26,7 @@ document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','1315531100000095');
 fbq('track','PageView');
 fbq('track','InitiateCheckout',{content_name:'buyer-test-form'});
+},300);});
 </script>
 
 <style>
@@ -70,6 +75,15 @@ a{color:var(--ink)}
 .survey{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:6px;box-shadow:0 12px 40px rgba(0,53,118,.08);max-width:600px;margin:0 auto}
 .survey iframe{width:100%;border:0;display:block;min-height:380px}
 .fallback{font-size:.9rem;color:var(--muted);padding:10px 8px 4px;margin:0}
+.skel{position:relative}
+.skel .ph{position:absolute;inset:6px;background:var(--white);border-radius:8px;padding:28px 24px;display:flex;flex-direction:column;gap:14px;z-index:1}
+.skel .ph i{display:block;height:14px;border-radius:7px;background:#EEF1F5}
+.skel .ph i.t{height:22px;width:60%}
+.skel .ph i.w{width:85%}
+.skel .ph i.m{width:70%}
+.skel .ph i.b{height:48px;width:100%;margin-top:10px;background:#E6F4F1}
+.skel .ph small{color:var(--muted);font-size:.85rem;margin-top:6px}
+.skel.ready .ph{display:none}
 .fallback a{color:var(--green);font-weight:600}
 
 /* Next steps */
@@ -80,6 +94,7 @@ a{color:var(--ink)}
 
 footer{padding:40px 0 40px;color:var(--muted);font-size:.85rem}
 </style>
+<script src="https://link.msgsndr.com/js/form_embed.js" async></script>
 </head>
 <body>
 
@@ -118,9 +133,17 @@ footer{padding:40px 0 40px;color:var(--muted);font-size:.85rem}
   </div>
 
   <div class="wrap">
-    <div class="survey">
+    <div class="survey skel">
       <iframe src="https://api.leadconnectorhq.com/widget/survey/8Hgp5SUJggWsr4aQqhNz" style="border:none;width:100%;min-height:380px;" scrolling="no" id="8Hgp5SUJggWsr4aQqhNz" title="survey" data-cookie-consent="true" data-cookie-consent-provider="auto"></iframe>
-      <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+      <div class="ph" aria-hidden="true"><i class="t"></i><i class="w"></i><i class="m"></i><i class="w"></i><i class="b"></i><small>Loading the form…</small></div>
+      <script>
+      (function(){
+        var box=document.querySelector('.survey.skel'),f=document.getElementById('8Hgp5SUJggWsr4aQqhNz');
+        function ready(){if(box)box.classList.add('ready');}
+        if(f){f.addEventListener('load',ready);}
+        setTimeout(ready,8000);
+      })();
+      </script>
       <p class="fallback">Form not loading? <a href="https://api.leadconnectorhq.com/widget/survey/8Hgp5SUJggWsr4aQqhNz" target="_blank" rel="noopener">Open it in a new tab</a> or email <a href="mailto:info@wyngroupinc.com">info@wyngroupinc.com</a>.</p>
     </div>
 

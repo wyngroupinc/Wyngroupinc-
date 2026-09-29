@@ -8,9 +8,6 @@
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#003576">
 
-<link rel="preconnect" href="https://api.leadconnectorhq.com">
-<link rel="preconnect" href="https://link.msgsndr.com">
-<link rel="dns-prefetch" href="https://services.leadconnectorhq.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -71,19 +68,33 @@ a{color:var(--ink)}
 .trust li{display:flex;align-items:center;gap:8px;font-size:.93rem;color:var(--text)}
 .trust .ic{color:var(--green)}
 
-/* Survey card */
-.survey{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:6px;box-shadow:0 12px 40px rgba(0,53,118,.08);max-width:600px;margin:0 auto}
-.survey iframe{width:100%;border:0;display:block;min-height:380px}
-.fallback{font-size:.9rem;color:var(--muted);padding:10px 8px 4px;margin:0}
-.skel{position:relative}
-.skel .ph{position:absolute;inset:6px;background:var(--white);border-radius:8px;padding:28px 24px;display:flex;flex-direction:column;gap:14px;z-index:1}
-.skel .ph i{display:block;height:14px;border-radius:7px;background:#EEF1F5}
-.skel .ph i.t{height:22px;width:60%}
-.skel .ph i.w{width:85%}
-.skel .ph i.m{width:70%}
-.skel .ph i.b{height:48px;width:100%;margin-top:10px;background:#E6F4F1}
-.skel .ph small{color:var(--muted);font-size:.85rem;margin-top:6px}
-.skel.ready .ph{display:none}
+/* Native form */
+.lf{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:22px 20px 18px;box-shadow:0 12px 40px rgba(0,53,118,.08);max-width:600px;margin:0 auto}
+@media (min-width:600px){.lf{padding:28px 28px 22px}}
+.lf fieldset{border:0;padding:0;margin:0 0 22px}
+.lf legend{font-weight:600;color:var(--ink);font-size:1.05rem;margin-bottom:10px;padding:0}
+.opt{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:8px;padding:13px 14px;margin-bottom:8px;cursor:pointer;background:var(--paper);font-size:1rem}
+.opt:hover{border-color:#B9C6D6}
+.opt input{width:20px;height:20px;margin:0;accent-color:var(--green);flex:0 0 20px}
+.opt:has(input:checked){border-color:var(--green);background:var(--green-2);font-weight:600}
+.row4{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media (min-width:480px){.row4{grid-template-columns:repeat(4,1fr)}}
+.row4 .opt{margin:0;justify-content:center;padding:13px 8px}
+.row4 .opt input{display:none}
+.row4 .opt:has(input:checked){box-shadow:inset 0 0 0 1px var(--green)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fld{display:block;margin-bottom:10px}
+.fld span{display:block;font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:4px}
+.fld input{width:100%;padding:13px 12px;border:1px solid var(--line);border-radius:8px;font:inherit;font-size:16px;background:var(--white)}
+.fld input:focus{outline:2px solid var(--green);outline-offset:1px;border-color:var(--green)}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:var(--muted);margin:14px 0 4px;cursor:pointer}
+.chk input{width:18px;height:18px;margin:2px 0 0;accent-color:var(--green);flex:0 0 18px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.err{color:#A23B3B;font-size:.92rem;margin:0 0 12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--green);color:#fff;text-decoration:none;font-weight:600;padding:16px 24px;border-radius:var(--radius);font-size:1.08rem;border:0;cursor:pointer;width:100%;min-height:54px;font-family:inherit}
+.btn:hover{background:#147a6c}
+.btn[disabled]{opacity:.7;cursor:wait}
+.fallback{font-size:.88rem;color:var(--muted);padding:12px 0 0;margin:0;text-align:center}
 .fallback a{color:var(--green);font-weight:600}
 
 /* Next steps */
@@ -94,7 +105,6 @@ a{color:var(--ink)}
 
 footer{padding:40px 0 40px;color:var(--muted);font-size:.85rem}
 </style>
-<script src="https://link.msgsndr.com/js/form_embed.js" async></script>
 </head>
 <body>
 
@@ -104,6 +114,7 @@ footer{padding:40px 0 40px;color:var(--muted);font-size:.85rem}
   <symbol id="i-call" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2.1z"/></symbol>
   <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
   <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></symbol>
 </svg>
 
 <nav class="nav" aria-label="Top">
@@ -133,19 +144,50 @@ footer{padding:40px 0 40px;color:var(--muted);font-size:.85rem}
   </div>
 
   <div class="wrap">
-    <div class="survey skel">
-      <iframe src="https://api.leadconnectorhq.com/widget/survey/8Hgp5SUJggWsr4aQqhNz" style="border:none;width:100%;min-height:380px;" scrolling="no" id="8Hgp5SUJggWsr4aQqhNz" title="survey" data-cookie-consent="true" data-cookie-consent-provider="auto"></iframe>
-      <div class="ph" aria-hidden="true"><i class="t"></i><i class="w"></i><i class="m"></i><i class="w"></i><i class="b"></i><small>Loading the form…</small></div>
-      <script>
-      (function(){
-        var box=document.querySelector('.survey.skel'),f=document.getElementById('8Hgp5SUJggWsr4aQqhNz');
-        function ready(){if(box)box.classList.add('ready');}
-        if(f){f.addEventListener('load',ready);}
-        setTimeout(ready,8000);
-      })();
-      </script>
-      <p class="fallback">Form not loading? <a href="https://api.leadconnectorhq.com/widget/survey/8Hgp5SUJggWsr4aQqhNz" target="_blank" rel="noopener">Open it in a new tab</a> or email <a href="mailto:info@wyngroupinc.com">info@wyngroupinc.com</a>.</p>
-    </div>
+    <form class="lf" id="leadform" action="/api/lead" method="post" novalidate>
+      <fieldset>
+        <legend>What kind of shop are you?</legend>
+        <label class="opt"><input type="radio" name="shop_type" value="ISO / broker" required><span>ISO / broker</span></label>
+        <label class="opt"><input type="radio" name="shop_type" value="Direct funder"><span>Direct funder</span></label>
+        <label class="opt"><input type="radio" name="shop_type" value="Solo broker"><span>Solo broker</span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Do you buy leads now?</legend>
+        <label class="opt"><input type="radio" name="buys_now" value="Yes, exclusive real-time" required><span>Yes, exclusive real-time</span></label>
+        <label class="opt"><input type="radio" name="buys_now" value="Yes, shared or aged data"><span>Yes, shared or aged data</span></label>
+        <label class="opt"><input type="radio" name="buys_now" value="Yes, live transfers"><span>Yes, live transfers</span></label>
+        <label class="opt"><input type="radio" name="buys_now" value="Not yet"><span>Not yet</span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>How many leads a day can your team work?</legend>
+        <div class="row4">
+          <label class="opt"><input type="radio" name="leads_per_day" value="2-3" required><span>2–3</span></label>
+          <label class="opt"><input type="radio" name="leads_per_day" value="4-6"><span>4–6</span></label>
+          <label class="opt"><input type="radio" name="leads_per_day" value="7-10"><span>7–10</span></label>
+          <label class="opt"><input type="radio" name="leads_per_day" value="10+"><span>10+</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="contact">
+        <legend>Where do we send the call details?</legend>
+        <div class="grid2">
+          <label class="fld"><span>First name</span><input type="text" name="first_name" autocomplete="given-name" required></label>
+          <label class="fld"><span>Last name</span><input type="text" name="last_name" autocomplete="family-name" required></label>
+        </div>
+        <label class="fld"><span>Company</span><input type="text" name="company" autocomplete="organization" required></label>
+        <label class="fld"><span>Work email</span><input type="email" name="email" autocomplete="email" inputmode="email" required></label>
+        <label class="fld"><span>Mobile</span><input type="tel" name="phone" autocomplete="tel" inputmode="tel" required></label>
+        <label class="chk"><input type="checkbox" name="consent" value="yes" required><span>I agree that Wyn Group Inc may call, text and email me about this test. Message and data rates may apply. Reply STOP to end texts.</span></label>
+        <input type="text" name="website_url" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="source" value="start-test">
+      </fieldset>
+
+      <p class="err" id="err" hidden>Please answer every question and check the consent box.</p>
+      <button class="btn" type="submit" id="submit">Book My 15-Minute Call <svg class="ic"><use href="#i-arrow"/></svg></button>
+      <p class="fallback">Trouble with the form? Email <a href="mailto:info@wyngroupinc.com">info@wyngroupinc.com</a>.</p>
+    </form>
 
     <ol class="next">
       <li><span class="badge"><svg class="ic"><use href="#i-check"/></svg></span><span>We confirm your shop is a fit, same day.</span></li>
@@ -154,6 +196,22 @@ footer{padding:40px 0 40px;color:var(--muted);font-size:.85rem}
     </ol>
   </div>
 </main>
+
+<script>
+(function(){
+  var f=document.getElementById('leadform'),err=document.getElementById('err'),btn=document.getElementById('submit');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.checkValidity()){err.hidden=false;var bad=f.querySelector(':invalid');if(bad){bad.closest('fieldset').scrollIntoView({block:'center'});}return;}
+    err.hidden=true;btn.disabled=true;btn.textContent='One second…';
+    var d=new FormData(f),o={};d.forEach(function(v,k){o[k]=v;});
+    var next='/book-call?first_name='+encodeURIComponent(o.first_name)+'&last_name='+encodeURIComponent(o.last_name)+'&email='+encodeURIComponent(o.email)+'&phone='+encodeURIComponent(o.phone);
+    fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(o)})
+      .then(function(){location.href=next;})
+      .catch(function(){location.href=next;});
+  });
+})();
+</script>
 
 <footer>
   <div class="wrap">

@@ -10,13 +10,18 @@
 
 <link rel="preconnect" href="https://api.leadconnectorhq.com">
 <link rel="preconnect" href="https://link.msgsndr.com">
+<link rel="prefetch" href="/book-call">
+<script type="speculationrules">
+{"prerender":[{"source":"list","urls":["/book-call"],"eagerness":"moderate"}]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Meta Pixel (same ID as the landing page). Fire the Lead event on the survey's thank-you page, not here. -->
 <script>
-window.addEventListener('load',function(){setTimeout(function(){
+function whenShown(cb){if(document.prerendering){document.addEventListener('prerenderingchange',cb,{once:true});}else{cb();}}
+window.addEventListener('load',function(){setTimeout(function(){whenShown(function(){
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
@@ -25,7 +30,7 @@ document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','1315531100000095');
 fbq('track','PageView');
 fbq('track','InitiateCheckout',{content_name:'buyer-test-form'});
-},300);});
+});},300);});
 </script>
 
 <style>
@@ -138,6 +143,8 @@ footer{padding:40px 0 40px;color:var(--muted);font-size:.85rem}
         src="https://api.leadconnectorhq.com/widget/form/pjCAl2ufKk1tm2zkJRK3"
         style="width:100%;height:100%;border:none;border-radius:8px;min-height:1130px"
         id="inline-pjCAl2ufKk1tm2zkJRK3"
+        fetchpriority="high"
+        importance="high"
         data-layout="{'id':'INLINE'}"
         data-trigger-type="alwaysShow"
         data-trigger-value=""

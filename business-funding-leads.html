@@ -12,6 +12,16 @@
 
 <!-- Awareness target: Solution Aware (stage 3), hook written at Problem Aware. Message-matches the EXCL ad. -->
 
+<!-- Warm up the form and calendar pages before anyone clicks -->
+<link rel="preconnect" href="https://api.leadconnectorhq.com">
+<link rel="preconnect" href="https://link.msgsndr.com">
+<link rel="prefetch" href="https://link.msgsndr.com/js/form_embed.js" as="script">
+<link rel="prefetch" href="/start-test">
+<link rel="prefetch" href="/book-call">
+<script type="speculationrules">
+{"prerender":[{"source":"list","urls":["/start-test"],"eagerness":"moderate"}],
+ "prefetch":[{"source":"list","urls":["/book-call"],"eagerness":"moderate"}]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">

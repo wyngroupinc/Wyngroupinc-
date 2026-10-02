@@ -13,11 +13,12 @@
 <link rel="dns-prefetch" href="https://services.leadconnectorhq.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Meta Pixel (same ID as the landing page). Fire the Lead event on the survey's thank-you page, not here. -->
 <script>
-window.addEventListener('load',function(){setTimeout(function(){
+function whenShown(cb){if(document.prerendering){document.addEventListener('prerenderingchange',cb,{once:true});}else{cb();}}
+window.addEventListener('load',function(){setTimeout(function(){whenShown(function(){
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
@@ -28,7 +29,7 @@ fbq('track','PageView');
 /* Lead fires here because this page is reached right after the form submits.
    Retargeting ads that send warm traffic straight to the calendar should link to /book-call?src=rt so Lead does not fire twice. */
 if(!/[?&]src=rt(&|$)/.test(location.search)){fbq('track','Lead',{content_name:'buyer-test-form'});}
-},300);});
+});},300);});
 </script>
 
 <style>
@@ -140,7 +141,7 @@ footer{padding:40px 0 40px;color:var(--muted);font-size:.85rem}
       <!-- GHL calendar. The script below forwards any query string on this page (first_name, last_name, email, phone) into the iframe so the booking form is prefilled.
            Set the survey's completion redirect to:
            https://wyngroupinc.com/book-call?first_name={{contact.first_name}}&last_name={{contact.last_name}}&email={{contact.email}}&phone={{contact.phone}} -->
-      <iframe src="https://api.leadconnectorhq.com/widget/booking/wCuBq53v2f2J9pe84FSB" allow="payment" style="width:100%;border:none;overflow:hidden;min-height:640px;" scrolling="no" id="WI25bKFq5WY2YS2dmyGL_1790294477166" title="Book a 15-minute call"></iframe>
+      <iframe src="https://api.leadconnectorhq.com/widget/booking/wCuBq53v2f2J9pe84FSB" allow="payment" style="width:100%;border:none;overflow:hidden;min-height:640px;" scrolling="no" id="WI25bKFq5WY2YS2dmyGL_1790294477166" fetchpriority="high" importance="high" title="Book a 15-minute call"></iframe>
       <script>
       (function(){
         var q=location.search.replace(/^\?/,'');
